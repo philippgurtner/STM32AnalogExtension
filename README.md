@@ -1,6 +1,12 @@
 # STM32AnalogExtension
-Bereichsübergreifende Projekte ADC Erweiterung für STM32F051Discovery kit
+Für die Bereichsübergreifende Projekte unserer Schule solte eine Erweiterung für das STM32F051Discovery Kit erstellt werden. 
+
+Analog Erweiterung 
+
+ToDo:
+-BNC Buchse
 
 
-BNC Buchse
-Strommessung ohne GND
+
+Anforderungen: 
+
