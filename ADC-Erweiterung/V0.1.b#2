@@ -1957,8 +1957,8 @@ design rules under a new name.</description>
 <vertex x="-6.35" y="1.524"/>
 <vertex x="-0.508" y="-4.318"/>
 <vertex x="35.052" y="-4.318"/>
-<vertex x="45.212" y="5.842"/>
-<vertex x="45.212" y="85.344"/>
+<vertex x="41.148" y="1.778"/>
+<vertex x="41.148" y="89.408"/>
 <vertex x="36.83" y="93.726"/>
 <vertex x="-1.27" y="93.726"/>
 <vertex x="-5.842" y="89.154"/>
@@ -2035,6 +2035,9 @@ design rules under a new name.</description>
 <contactref element="IC1" pad="13"/>
 <contactref element="R8" pad="1"/>
 <contactref element="R9" pad="1"/>
+<wire x1="21.424" y1="57.912" x2="21.419659375" y2="57.907659375" width="0.6096" layer="1"/>
+<wire x1="21.419659375" y1="57.907659375" x2="20.823803125" y2="22.444196875" width="0.6096" layer="1"/>
+<wire x1="20.823803125" y1="22.444196875" x2="22.352" y2="20.916" width="0.6096" layer="1"/>
 <wire x1="21.424" y1="60.364" x2="21.336" y2="60.452" width="0.6096" layer="1"/>
 <wire x1="21.424" y1="60.364" x2="21.424" y2="57.912" width="0.6096" layer="1"/>
 <via x="21.336" y="60.452" extent="1-16" drill="0.35"/>
@@ -2042,8 +2045,6 @@ design rules under a new name.</description>
 <wire x1="19.812" y1="61.976" x2="19.812" y2="63.754" width="0.3048" layer="16"/>
 <wire x1="18.792" y1="64.774" x2="17.832" y2="64.774" width="0.3048" layer="16"/>
 <wire x1="19.812" y1="63.754" x2="18.792" y2="64.774" width="0.3048" layer="16"/>
-<wire x1="21.424" y1="57.912" x2="21.424" y2="21.844" width="0.6096" layer="1"/>
-<wire x1="21.424" y1="21.844" x2="22.352" y2="20.916" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$8">
 <contactref element="X2" pad="1"/>

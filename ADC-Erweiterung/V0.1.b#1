@@ -1957,8 +1957,8 @@ design rules under a new name.</description>
 <vertex x="-6.35" y="1.524"/>
 <vertex x="-0.508" y="-4.318"/>
 <vertex x="35.052" y="-4.318"/>
-<vertex x="45.212" y="5.842"/>
-<vertex x="45.212" y="85.344"/>
+<vertex x="41.148" y="1.778"/>
+<vertex x="41.148" y="89.408"/>
 <vertex x="36.83" y="93.726"/>
 <vertex x="-1.27" y="93.726"/>
 <vertex x="-5.842" y="89.154"/>
