@@ -10394,16 +10394,24 @@ Source: www.kingbright.com</description>
 </classes>
 <parts>
 <part name="X1" library="ADC-Erweiterung" deviceset="33PIN-2.54" device="">
-<attribute name="DIGIKEY_NR" value=""/>
-<attribute name="DIGIKEY_PRICE" value=""/>
+<attribute name="DIGIKEY_NR" value="609-2223-ND "/>
+<attribute name="DIGIKEY_PRICE" value="1.41 Fr."/>
 </part>
 <part name="IC1" library="ADC-Erweiterung" deviceset="ADS124S0X" device="IPBS"/>
 <part name="X2" library="ADC-Erweiterung" deviceset="MKDSN1,5/3-5,08" device="" package3d_urn="urn:adsk.eagle:package:9641/1">
 <attribute name="DIGIKEY_NR" value="277-14503-ND"/>
 <attribute name="DIGIKEY_PRICE" value="1.57"/>
 </part>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
-<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2"/>
+<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="1276-6439-1-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.1"/>
+</part>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -10417,10 +10425,37 @@ Source: www.kingbright.com</description>
 <part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="SML0603" package3d_urn="urn:adsk.eagle:package:15832/1"/>
-<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="100"/>
+<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="100">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-100DCT-ND"/>
+<attribute name="DIGIKEY_PRIZE" value="0.20 Fr."/>
+</part>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="330n"/>
-<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1u"/>
+<part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="330n">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="490-6050-1-ND"/>
+<attribute name="DIGIKEY_PRICE" value=".22"/>
+</part>
+<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1u">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="1276-1182-1-ND"/>
+<attribute name="DIGIKEY_PRIZE" value="0.10 Fr."/>
+</part>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="X5" library="ADC-Erweiterung" deviceset="A97581-ND" device="">
 <attribute name="DIGIKEY_NR" value="A97581-ND"/>
@@ -10442,7 +10477,16 @@ Source: www.kingbright.com</description>
 </part>
 <part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n"/>
+<part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="1276-6439-1-ND "/>
+<attribute name="DIGIKEY_PRICE" value="0.1"/>
+</part>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="X3" library="ADC-Erweiterung" deviceset="A97581-ND" device="">
@@ -10453,6 +10497,12 @@ Source: www.kingbright.com</description>
 <attribute name="DIGIKEY_NR" value="A97581-ND"/>
 <attribute name="DIGIKEY_PRICE" value="1.73"/>
 </part>
+<part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
+<part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
+<part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
+<part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
+<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
+<part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
 </parts>
 <sheets>
 <sheet>
@@ -10495,6 +10545,8 @@ GND</text>
 <wire x1="-40.64" y1="78.74" x2="-40.64" y2="93.98" width="0.1524" layer="90"/>
 <wire x1="-40.64" y1="93.98" x2="-63.5" y2="93.98" width="0.1524" layer="90"/>
 <text x="-63.5" y="93.98" size="1.6764" layer="90">TP100</text>
+<text x="-81.28" y="106.68" size="1.778" layer="91">stecker:
+Molec für pt100 paralell dazu</text>
 </plain>
 <instances>
 <instance part="X1" gate="G$1" x="185.42" y="83.82" smashed="yes" rot="MR270">
@@ -10519,13 +10571,11 @@ GND</text>
 <instance part="X2" gate="-3" x="-45.72" y="81.28" smashed="yes" rot="R180">
 <attribute name="NAME" x="-48.768" y="82.169" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="R1" gate="G$1" x="96.52" y="104.14" smashed="yes">
-<attribute name="NAME" x="92.71" y="105.6386" size="1.778" layer="95"/>
-<attribute name="VALUE" x="92.71" y="100.838" size="1.778" layer="96"/>
-</instance>
 <instance part="C1" gate="G$1" x="5.08" y="7.62" smashed="yes">
 <attribute name="NAME" x="6.604" y="8.001" size="1.778" layer="95"/>
 <attribute name="VALUE" x="6.604" y="2.921" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="5.08" y="7.62" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="5.08" y="7.62" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="P+1" gate="VCC" x="196.85" y="88.9" smashed="yes">
 <attribute name="VALUE" x="196.85" y="90.17" size="1.778" layer="96" rot="R90"/>
@@ -10577,6 +10627,8 @@ GND</text>
 <instance part="R9" gate="G$1" x="93.98" y="62.23" smashed="yes">
 <attribute name="NAME" x="96.52" y="62.4586" size="1.778" layer="95"/>
 <attribute name="VALUE" x="88.9" y="62.738" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="93.98" y="62.23" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRIZE" x="93.98" y="62.23" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND4" gate="1" x="101.6" y="49.53" smashed="yes">
 <attribute name="VALUE" x="99.06" y="46.99" size="1.778" layer="96"/>
@@ -10584,10 +10636,14 @@ GND</text>
 <instance part="C2" gate="G$1" x="15.24" y="7.62" smashed="yes">
 <attribute name="NAME" x="16.764" y="8.001" size="1.778" layer="95"/>
 <attribute name="VALUE" x="16.764" y="2.921" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="15.24" y="7.62" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="15.24" y="7.62" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C3" gate="G$1" x="78.74" y="95.25" smashed="yes">
 <attribute name="NAME" x="80.264" y="95.631" size="1.778" layer="95"/>
 <attribute name="VALUE" x="80.264" y="90.551" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="78.74" y="95.25" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRIZE" x="78.74" y="95.25" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND5" gate="1" x="78.74" y="86.36" smashed="yes">
 <attribute name="VALUE" x="76.2" y="83.82" size="1.778" layer="96"/>
@@ -10626,6 +10682,8 @@ GND</text>
 <instance part="C4" gate="G$1" x="25.4" y="7.62" smashed="yes">
 <attribute name="NAME" x="26.924" y="8.001" size="1.778" layer="95"/>
 <attribute name="VALUE" x="26.924" y="2.921" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="25.4" y="7.62" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="25.4" y="7.62" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="P+4" gate="VCC" x="5.08" y="16.51" smashed="yes">
 <attribute name="VALUE" x="5.08" y="19.05" size="1.778" layer="96" rot="R90"/>
@@ -10644,6 +10702,30 @@ GND</text>
 <attribute name="NAME" x="-14.732" y="60.96" size="1.778" layer="95" rot="R90"/>
 <attribute name="DIGIKEY_NR" x="-11.43" y="63.5" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="DIGIKEY_PRICE" x="-11.43" y="63.5" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="R12" gate="G$1" x="7.62" y="88.9" smashed="yes">
+<attribute name="NAME" x="10.16" y="89.1286" size="1.778" layer="95"/>
+<attribute name="VALUE" x="2.54" y="89.408" size="1.778" layer="96"/>
+</instance>
+<instance part="R13" gate="G$1" x="7.62" y="85.09" smashed="yes">
+<attribute name="NAME" x="10.16" y="85.3186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="2.54" y="85.598" size="1.778" layer="96"/>
+</instance>
+<instance part="R14" gate="G$1" x="7.62" y="81.28" smashed="yes">
+<attribute name="NAME" x="10.16" y="81.5086" size="1.778" layer="95"/>
+<attribute name="VALUE" x="2.54" y="81.788" size="1.778" layer="96"/>
+</instance>
+<instance part="R15" gate="G$1" x="7.62" y="77.47" smashed="yes">
+<attribute name="NAME" x="10.16" y="77.6986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="2.54" y="77.978" size="1.778" layer="96"/>
+</instance>
+<instance part="R16" gate="G$1" x="7.62" y="73.66" smashed="yes">
+<attribute name="NAME" x="10.16" y="73.8886" size="1.778" layer="95"/>
+<attribute name="VALUE" x="2.54" y="74.168" size="1.778" layer="96"/>
+</instance>
+<instance part="R17" gate="G$1" x="7.62" y="69.85" smashed="yes">
+<attribute name="NAME" x="10.16" y="70.0786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="2.54" y="70.358" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -10908,44 +10990,38 @@ GND</text>
 <net name="N$8" class="0">
 <segment>
 <pinref part="X2" gate="-1" pin="KL"/>
-<pinref part="IC1" gate="G$1" pin="AIN0"/>
 <wire x1="-43.18" y1="88.9" x2="-36.83" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="-36.83" y1="88.9" x2="25.4" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="-36.83" y1="90.17" x2="-36.83" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="R12" gate="G$1" pin="1"/>
+<wire x1="2.54" y1="88.9" x2="-36.83" y2="88.9" width="0.1524" layer="91"/>
 <junction x="-36.83" y="88.9"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
 <pinref part="X2" gate="-2" pin="KL"/>
-<wire x1="-43.18" y1="85.09" x2="10.16" y2="85.09" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="85.09" x2="10.16" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="AIN1"/>
-<wire x1="10.16" y1="86.36" x2="25.4" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="85.09" x2="2.54" y2="85.09" width="0.1524" layer="91"/>
+<pinref part="R13" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
 <pinref part="X2" gate="-3" pin="KL"/>
 <wire x1="-43.18" y1="81.28" x2="-36.83" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="-36.83" y1="81.28" x2="12.7" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="81.28" x2="12.7" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="AIN2"/>
-<wire x1="12.7" y1="83.82" x2="25.4" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="R11" gate="G$1" pin="2"/>
 <wire x1="-36.83" y1="80.01" x2="-36.83" y2="81.28" width="0.1524" layer="91"/>
 <junction x="-36.83" y="81.28"/>
+<wire x1="-36.83" y1="81.28" x2="2.54" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="R14" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="AIN3"/>
-<wire x1="25.4" y1="81.28" x2="16.51" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="16.51" y1="81.28" x2="16.51" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="X5" gate="G$1" pin="1"/>
-<wire x1="-24.13" y1="66.04" x2="-24.13" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="-24.13" y1="76.2" x2="16.51" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-24.13" y1="66.04" x2="-24.13" y2="77.47" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="1"/>
+<wire x1="-24.13" y1="77.47" x2="2.54" y2="77.47" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$12" class="0">
@@ -10953,19 +11029,17 @@ GND</text>
 <pinref part="IC1" gate="G$1" pin="AIN4"/>
 <wire x1="25.4" y1="78.74" x2="19.05" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="19.05" y1="78.74" x2="19.05" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="19.05" y1="73.66" x2="-11.43" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="-11.43" y1="66.04" x2="-11.43" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="X4" gate="G$1" pin="1"/>
+<pinref part="R16" gate="G$1" pin="2"/>
+<wire x1="19.05" y1="73.66" x2="12.7" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="AIN5"/>
 <wire x1="25.4" y1="76.2" x2="21.59" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="21.59" y1="76.2" x2="21.59" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="21.59" y1="71.12" x2="2.54" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="66.04" x2="2.54" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="X3" gate="G$1" pin="1"/>
+<wire x1="21.59" y1="76.2" x2="21.59" y2="69.85" width="0.1524" layer="91"/>
+<pinref part="R17" gate="G$1" pin="2"/>
+<wire x1="12.7" y1="69.85" x2="21.59" y2="69.85" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -10983,6 +11057,55 @@ GND</text>
 <wire x1="74.93" y1="91.44" x2="74.93" y2="97.79" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="74.93" y1="97.79" x2="78.74" y2="97.79" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="AIN3"/>
+<wire x1="25.4" y1="81.28" x2="16.51" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="2"/>
+<wire x1="12.7" y1="77.47" x2="16.51" y2="77.47" width="0.1524" layer="91"/>
+<wire x1="16.51" y1="77.47" x2="16.51" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$17" class="0">
+<segment>
+<wire x1="-11.43" y1="66.04" x2="-11.43" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="X4" gate="G$1" pin="1"/>
+<pinref part="R16" gate="G$1" pin="1"/>
+<wire x1="-11.43" y1="73.66" x2="2.54" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<wire x1="2.54" y1="66.04" x2="2.54" y2="69.85" width="0.1524" layer="91"/>
+<pinref part="X3" gate="G$1" pin="1"/>
+<pinref part="R17" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="R14" gate="G$1" pin="2"/>
+<wire x1="12.7" y1="81.28" x2="13.97" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="13.97" y1="81.28" x2="13.97" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="AIN2"/>
+<wire x1="13.97" y1="83.82" x2="25.4" y2="83.82" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$20" class="0">
+<segment>
+<pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="IC1" gate="G$1" pin="AIN0"/>
+<wire x1="12.7" y1="88.9" x2="25.4" y2="88.9" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$21" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="AIN1"/>
+<wire x1="17.78" y1="86.36" x2="25.4" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="R13" gate="G$1" pin="2"/>
+<wire x1="12.7" y1="85.09" x2="17.78" y2="85.09" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="85.09" x2="17.78" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
