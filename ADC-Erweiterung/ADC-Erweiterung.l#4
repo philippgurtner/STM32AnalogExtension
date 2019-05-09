@@ -234,15 +234,15 @@ Source: http://www.semiconductors.philips.com/acrobat_download/datasheets/TDA988
 <rectangle x1="-2.125" y1="2.175" x2="-1.375" y2="2.525" layer="29" rot="R270"/>
 <rectangle x1="-1.975" y1="1.75" x2="-1.75" y2="1.975" layer="21"/>
 </package>
-<package name="1X16MTA">
+<package name="1X33">
 <description>&lt;b&gt;AMP MTA connector&lt;/b&gt;</description>
-<wire x1="40.5892" y1="3.81" x2="40.5892" y2="1.905" width="0.2" layer="21"/>
-<wire x1="40.5892" y1="1.905" x2="40.5892" y2="-1.905" width="0.2" layer="21"/>
-<wire x1="-40.6908" y1="-1.905" x2="40.5892" y2="-1.905" width="0.2" layer="21"/>
+<wire x1="43.1292" y1="3.81" x2="43.1292" y2="1.905" width="0.2" layer="21"/>
+<wire x1="43.1292" y1="1.905" x2="43.1292" y2="-1.905" width="0.2" layer="21"/>
+<wire x1="-40.6908" y1="-1.905" x2="43.1292" y2="-1.905" width="0.2" layer="21"/>
 <wire x1="-40.6908" y1="-1.905" x2="-40.6908" y2="1.905" width="0.2" layer="21"/>
 <wire x1="-40.6908" y1="1.905" x2="-40.6908" y2="3.81" width="0.2" layer="21"/>
-<wire x1="-40.6908" y1="3.81" x2="40.5892" y2="3.81" width="0.2" layer="21"/>
-<wire x1="-40.6908" y1="1.905" x2="40.5892" y2="1.905" width="0.2" layer="21"/>
+<wire x1="-40.6908" y1="3.81" x2="43.1292" y2="3.81" width="0.2" layer="21"/>
+<wire x1="-40.6908" y1="1.905" x2="43.1292" y2="1.905" width="0.2" layer="21"/>
 <pad name="1" x="-39.497" y="0" drill="0.8" shape="long" rot="R90"/>
 <text x="-33.782" y="2.4638" size="1.016" layer="25">&gt;NAME</text>
 <text x="-40.085" y="2.5458" size="1.016" layer="27">&gt;VALUE</text>
@@ -309,6 +309,8 @@ Source: http://www.semiconductors.philips.com/acrobat_download/datasheets/TDA988
 <pad name="30" x="34.163" y="0" drill="0.8" shape="long" rot="R90"/>
 <pad name="31" x="36.703" y="0" drill="0.8" shape="long" rot="R90"/>
 <pad name="32" x="39.243" y="0" drill="0.8" shape="long" rot="R90"/>
+<pad name="33" x="41.783" y="0" drill="0.8" shape="long" rot="R90"/>
+<rectangle x1="41.275" y1="-0.508" x2="42.291" y2="0.508" layer="21"/>
 </package>
 <package name="MKDSN1,5/3-5,08" urn="urn:adsk.eagle:footprint:9549/1">
 <description>&lt;b&gt;MKDSN 1,5/ 3-5,08&lt;/b&gt; Printklemme&lt;p&gt;
@@ -644,12 +646,12 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="32PIN-2.54" prefix="X">
+<deviceset name="33PIN-2.54" prefix="X">
 <gates>
 <gate name="G$1" symbol="MTA-16" x="-40.64" y="0"/>
 </gates>
 <devices>
-<device name="" package="1X16MTA">
+<device name="" package="1X33">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="10" pad="10"/>
@@ -677,6 +679,7 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 <connect gate="G$1" pin="30" pad="30"/>
 <connect gate="G$1" pin="31" pad="31"/>
 <connect gate="G$1" pin="32" pad="32"/>
+<connect gate="G$1" pin="33" pad="33"/>
 <connect gate="G$1" pin="4" pad="4"/>
 <connect gate="G$1" pin="5" pad="5"/>
 <connect gate="G$1" pin="6" pad="6"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.1">
+<eagle version="9.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -720,7 +720,7 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="A97581-ND">
+<deviceset name="A97581-ND" prefix="X">
 <gates>
 <gate name="G$1" symbol="BNC-MGND" x="0" y="0"/>
 </gates>
