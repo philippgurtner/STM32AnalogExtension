@@ -10416,7 +10416,16 @@ Source: www.kingbright.com</description>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-470GRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.1"/>
+</part>
 <part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
 <part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
@@ -10601,6 +10610,8 @@ Molec für pt100 paralell dazu</text>
 <instance part="R2" gate="G$1" x="76.2" y="81.28" smashed="yes">
 <attribute name="NAME" x="78.74" y="81.5086" size="1.778" layer="95"/>
 <attribute name="VALUE" x="71.12" y="81.788" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="76.2" y="81.28" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="76.2" y="81.28" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R3" gate="G$1" x="76.2" y="78.74" smashed="yes">
 <attribute name="NAME" x="78.74" y="78.9686" size="1.778" layer="95"/>

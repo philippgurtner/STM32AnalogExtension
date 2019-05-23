@@ -10397,7 +10397,10 @@ Source: www.kingbright.com</description>
 <attribute name="DIGIKEY_NR" value="609-2223-ND "/>
 <attribute name="DIGIKEY_PRICE" value="1.41 Fr."/>
 </part>
-<part name="IC1" library="ADC-Erweiterung" deviceset="ADS124S0X" device="IPBS"/>
+<part name="IC1" library="ADC-Erweiterung" deviceset="ADS124S0X" device="IPBS" value="ADS124S06IPBS">
+<attribute name="DIGIKEY_NR" value="296-45188-ND"/>
+<attribute name="DIGIKEY_PRICE" value="10.15 Fr."/>
+</part>
 <part name="X2" library="ADC-Erweiterung" deviceset="MKDSN1,5/3-5,08" device="" package3d_urn="urn:adsk.eagle:package:9641/1">
 <attribute name="DIGIKEY_NR" value="277-14503-ND"/>
 <attribute name="DIGIKEY_PRICE" value="1.57"/>
@@ -10433,7 +10436,10 @@ Source: www.kingbright.com</description>
 <part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
 <part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="SML0603" package3d_urn="urn:adsk.eagle:package:15832/1"/>
+<part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="SML0603" package3d_urn="urn:adsk.eagle:package:15832/1">
+<attribute name="DIGIKEY_NR" value="475-3118-1-ND "/>
+<attribute name="DIGIKEY_PRICE" value="0.52 Fr."/>
+</part>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="100">
 <spice>
 <pinmapping spiceprefix="R">
@@ -10576,6 +10582,8 @@ Molec für pt100 paralell dazu</text>
 <instance part="IC1" gate="G$1" x="45.72" y="76.2" smashed="yes">
 <attribute name="VALUE" x="55.88" y="93.98" size="1.778" layer="96"/>
 <attribute name="NAME" x="27.94" y="93.98" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_PRICE" x="45.72" y="76.2" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_NR" x="45.72" y="76.2" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="X2" gate="-1" x="-45.72" y="88.9" smashed="yes" rot="R180">
 <attribute name="NAME" x="-48.768" y="89.789" size="1.778" layer="95" rot="R180"/>
@@ -10643,6 +10651,8 @@ Molec für pt100 paralell dazu</text>
 <instance part="LED1" gate="G$1" x="101.6" y="58.42" smashed="yes">
 <attribute name="NAME" x="105.156" y="53.848" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="107.315" y="53.848" size="1.778" layer="96" rot="R90"/>
+<attribute name="DIGIKEY_NR" x="101.6" y="58.42" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="101.6" y="58.42" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R9" gate="G$1" x="93.98" y="62.23" smashed="yes">
 <attribute name="NAME" x="96.52" y="62.4586" size="1.778" layer="95"/>
