@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="50" unitdist="mil" unit="mm" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -234,7 +234,7 @@ Source: http://www.semiconductors.philips.com/acrobat_download/datasheets/TDA988
 <rectangle x1="-2.125" y1="2.175" x2="-1.375" y2="2.525" layer="29" rot="R270"/>
 <rectangle x1="-1.975" y1="1.75" x2="-1.75" y2="1.975" layer="21"/>
 </package>
-<package name="1X16MTA">
+<package name="1X33">
 <description>&lt;b&gt;AMP MTA connector&lt;/b&gt;</description>
 <wire x1="43.1292" y1="3.81" x2="43.1292" y2="1.905" width="0.2" layer="21"/>
 <wire x1="43.1292" y1="1.905" x2="43.1292" y2="-1.905" width="0.2" layer="21"/>
@@ -398,8 +398,9 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 <pad name="3" x="3.13" y="-3.13" drill="1.6" diameter="2.8"/>
 <pad name="1" x="0" y="0" drill="1.1" diameter="1.9304"/>
 <circle x="0" y="0" radius="5.5" width="0.127" layer="21"/>
-<text x="5.08" y="5.08" size="1.016" layer="25">&gt;Name</text>
-<text x="5.08" y="3.81" size="1.016" layer="27">&gt;Value</text>
+<text x="-2.54" y="6.35" size="1.016" layer="25">&gt;Name</text>
+<text x="-2.54" y="5.08" size="1.016" layer="27">&gt;Value</text>
+<circle x="0" y="0" radius="7.5" width="0.1524" layer="21"/>
 </package>
 </packages>
 <packages3d>
@@ -646,12 +647,12 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="32PIN-2.54" prefix="X">
+<deviceset name="33PIN-2.54" prefix="X">
 <gates>
 <gate name="G$1" symbol="MTA-16" x="-40.64" y="0"/>
 </gates>
 <devices>
-<device name="" package="1X16MTA">
+<device name="" package="1X33">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="10" pad="10"/>
@@ -679,6 +680,7 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 <connect gate="G$1" pin="30" pad="30"/>
 <connect gate="G$1" pin="31" pad="31"/>
 <connect gate="G$1" pin="32" pad="32"/>
+<connect gate="G$1" pin="33" pad="33"/>
 <connect gate="G$1" pin="4" pad="4"/>
 <connect gate="G$1" pin="5" pad="5"/>
 <connect gate="G$1" pin="6" pad="6"/>

@@ -87,38 +87,6 @@
 <pad name="1" x="-39.497" y="0" drill="0.8" shape="long" rot="R90"/>
 <text x="-33.782" y="2.4638" size="1.016" layer="25">&gt;NAME</text>
 <text x="-40.085" y="2.5458" size="1.016" layer="27">&gt;VALUE</text>
-<rectangle x1="-40.005" y1="-0.508" x2="-38.989" y2="0.508" layer="21"/>
-<rectangle x1="-37.465" y1="-0.508" x2="-36.449" y2="0.508" layer="21"/>
-<rectangle x1="-34.925" y1="-0.508" x2="-33.909" y2="0.508" layer="21"/>
-<rectangle x1="-32.385" y1="-0.508" x2="-31.369" y2="0.508" layer="21"/>
-<rectangle x1="-29.845" y1="-0.508" x2="-28.829" y2="0.508" layer="21"/>
-<rectangle x1="-27.305" y1="-0.508" x2="-26.289" y2="0.508" layer="21"/>
-<rectangle x1="-24.765" y1="-0.508" x2="-23.749" y2="0.508" layer="21"/>
-<rectangle x1="-22.225" y1="-0.508" x2="-21.209" y2="0.508" layer="21"/>
-<rectangle x1="-19.685" y1="-0.508" x2="-18.669" y2="0.508" layer="21"/>
-<rectangle x1="-17.145" y1="-0.508" x2="-16.129" y2="0.508" layer="21"/>
-<rectangle x1="-14.605" y1="-0.508" x2="-13.589" y2="0.508" layer="21"/>
-<rectangle x1="-12.065" y1="-0.508" x2="-11.049" y2="0.508" layer="21"/>
-<rectangle x1="-9.525" y1="-0.508" x2="-8.509" y2="0.508" layer="21"/>
-<rectangle x1="-6.985" y1="-0.508" x2="-5.969" y2="0.508" layer="21"/>
-<rectangle x1="-4.445" y1="-0.508" x2="-3.429" y2="0.508" layer="21"/>
-<rectangle x1="-1.905" y1="-0.508" x2="-0.889" y2="0.508" layer="21"/>
-<rectangle x1="0.635" y1="-0.508" x2="1.651" y2="0.508" layer="21"/>
-<rectangle x1="3.175" y1="-0.508" x2="4.191" y2="0.508" layer="21"/>
-<rectangle x1="5.715" y1="-0.508" x2="6.731" y2="0.508" layer="21"/>
-<rectangle x1="8.255" y1="-0.508" x2="9.271" y2="0.508" layer="21"/>
-<rectangle x1="10.795" y1="-0.508" x2="11.811" y2="0.508" layer="21"/>
-<rectangle x1="13.335" y1="-0.508" x2="14.351" y2="0.508" layer="21"/>
-<rectangle x1="15.875" y1="-0.508" x2="16.891" y2="0.508" layer="21"/>
-<rectangle x1="18.415" y1="-0.508" x2="19.431" y2="0.508" layer="21"/>
-<rectangle x1="20.955" y1="-0.508" x2="21.971" y2="0.508" layer="21"/>
-<rectangle x1="23.495" y1="-0.508" x2="24.511" y2="0.508" layer="21"/>
-<rectangle x1="26.035" y1="-0.508" x2="27.051" y2="0.508" layer="21"/>
-<rectangle x1="28.575" y1="-0.508" x2="29.591" y2="0.508" layer="21"/>
-<rectangle x1="31.115" y1="-0.508" x2="32.131" y2="0.508" layer="21"/>
-<rectangle x1="33.655" y1="-0.508" x2="34.671" y2="0.508" layer="21"/>
-<rectangle x1="36.195" y1="-0.508" x2="37.211" y2="0.508" layer="21"/>
-<rectangle x1="38.735" y1="-0.508" x2="39.751" y2="0.508" layer="21"/>
 <pad name="2" x="-36.957" y="0" drill="0.8" shape="long" rot="R90"/>
 <pad name="3" x="-34.417" y="0" drill="0.8" shape="long" rot="R90"/>
 <pad name="4" x="-31.877" y="0" drill="0.8" shape="long" rot="R90"/>
@@ -151,7 +119,6 @@
 <pad name="31" x="36.703" y="0" drill="0.8" shape="long" rot="R90"/>
 <pad name="32" x="39.243" y="0" drill="0.8" shape="long" rot="R90"/>
 <pad name="33" x="41.783" y="0" drill="0.8" shape="long" rot="R90"/>
-<rectangle x1="41.275" y1="-0.508" x2="42.291" y2="0.508" layer="21"/>
 </package>
 <package name="HVQFN32">
 <description>&lt;b&gt;HVQFN32&lt;/b&gt; (SOT617-3) 5 x 5 x .85 mm,  Pitch 0.5mm&lt;p&gt;
@@ -404,6 +371,20 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 <text x="-2.54" y="5.08" size="1.016" layer="27">&gt;Value</text>
 <circle x="0" y="0" radius="7.5" width="0.1524" layer="21"/>
 </package>
+<package name="MOLEX-87438-0343">
+<smd name="1" x="-1.775" y="1.5" dx="3.55" dy="0.85" layer="1"/>
+<smd name="2" x="-1.775" y="0" dx="3.55" dy="0.85" layer="1"/>
+<smd name="3" x="-1.775" y="-1.5" dx="3.55" dy="0.85" layer="1"/>
+<smd name="1_1" x="2.125" y="1.5" dx="2.65" dy="0.85" layer="1"/>
+<smd name="2_1" x="2.125" y="0" dx="2.65" dy="0.85" layer="1"/>
+<smd name="3_1" x="2.125" y="-1.5" dx="2.65" dy="0.85" layer="1"/>
+<wire x1="-3.875" y1="2.9" x2="-3.875" y2="-2.9" width="0.127" layer="51"/>
+<wire x1="3.875" y1="2.9" x2="3.875" y2="-2.9" width="0.127" layer="51"/>
+<wire x1="3.875" y1="2.9" x2="-3.875" y2="2.9" width="0.127" layer="51"/>
+<wire x1="3.875" y1="-2.9" x2="-3.875" y2="-2.9" width="0.127" layer="51"/>
+<text x="5.08" y="-2.54" size="0.6096" layer="27">&gt;VALUE</text>
+<text x="5.08" y="-1.27" size="0.6096" layer="25">&gt;NAME</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="MKDSN1,5/3-5,08" urn="urn:adsk.eagle:package:9641/1" type="box">
@@ -563,6 +544,21 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 <rectangle x1="-2.54" y1="-0.254" x2="-0.254" y2="0.254" layer="94"/>
 <pin name="1" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
 <pin name="2" x="2.54" y="-2.54" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
+<symbol name="BUCHSE3POL">
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="6.35" y1="-1.905" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="6.35" y1="-1.905" x2="6.35" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="6.35" y2="1.27" width="0.254" layer="94"/>
+<circle x="0" y="0" radius="0.635" width="0.254" layer="94"/>
+<circle x="2.54" y="0" radius="0.635" width="0.254" layer="94"/>
+<circle x="5.08" y="0" radius="0.635" width="0.254" layer="94"/>
+<text x="5.08" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="7.62" y="-3.81" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-2.54" y="-1.27" size="1.27" layer="95">1</text>
+<pin name="1" x="0" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="2" x="2.54" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="3" x="5.08" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -737,6 +733,23 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2 3 4 5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MOLEX-8738-0343" prefix="X">
+<gates>
+<gate name="G$1" symbol="BUCHSE3POL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MOLEX-87438-0343">
+<connects>
+<connect gate="G$1" pin="1" pad="1 1_1"/>
+<connect gate="G$1" pin="2" pad="2 2_1"/>
+<connect gate="G$1" pin="3" pad="3 3_1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -10395,11 +10408,11 @@ Source: www.kingbright.com</description>
 <parts>
 <part name="X1" library="ADC-Erweiterung" deviceset="33PIN-2.54" device="">
 <attribute name="DIGIKEY_NR" value="609-2223-ND "/>
-<attribute name="DIGIKEY_PRICE" value="1.41 Fr."/>
+<attribute name="DIGIKEY_PRICE" value="1.41"/>
 </part>
 <part name="IC1" library="ADC-Erweiterung" deviceset="ADS124S0X" device="IPBS" value="ADS124S06IPBS">
 <attribute name="DIGIKEY_NR" value="296-45188-ND"/>
-<attribute name="DIGIKEY_PRICE" value="10.15 Fr."/>
+<attribute name="DIGIKEY_PRICE" value="10.15"/>
 </part>
 <part name="X2" library="ADC-Erweiterung" deviceset="MKDSN1,5/3-5,08" device="" package3d_urn="urn:adsk.eagle:package:9641/1">
 <attribute name="DIGIKEY_NR" value="277-14503-ND"/>
@@ -10413,7 +10426,7 @@ Source: www.kingbright.com</description>
 </pinmapping>
 </spice>
 <attribute name="DIGIKEY_NR" value="1276-6439-1-ND"/>
-<attribute name="DIGIKEY_PRICE" value="0.1"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
 </part>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
@@ -10427,18 +10440,72 @@ Source: www.kingbright.com</description>
 </pinmapping>
 </spice>
 <attribute name="DIGIKEY_NR" value="311-470GRCT-ND"/>
-<attribute name="DIGIKEY_PRICE" value="0.1"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
 </part>
-<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
-<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
-<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
-<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
-<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
-<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47"/>
+<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-470GRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
+<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-470GRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
+<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-470GRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
+<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-470GRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
+<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-470GRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
+<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="47">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-470GRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="SML0603" package3d_urn="urn:adsk.eagle:package:15832/1">
 <attribute name="DIGIKEY_NR" value="475-3118-1-ND "/>
-<attribute name="DIGIKEY_PRICE" value="0.52 Fr."/>
+<attribute name="DIGIKEY_PRICE" value="0.52"/>
 </part>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="100">
 <spice>
@@ -10448,7 +10515,7 @@ Source: www.kingbright.com</description>
 </pinmapping>
 </spice>
 <attribute name="DIGIKEY_NR" value="311-100DCT-ND"/>
-<attribute name="DIGIKEY_PRICE" value="0.20 Fr."/>
+<attribute name="DIGIKEY_PRICE" value="0.20"/>
 </part>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="330n">
@@ -10459,7 +10526,7 @@ Source: www.kingbright.com</description>
 </pinmapping>
 </spice>
 <attribute name="DIGIKEY_NR" value="490-6050-1-ND"/>
-<attribute name="DIGIKEY_PRICE" value=".22"/>
+<attribute name="DIGIKEY_PRICE" value="0.22"/>
 </part>
 <part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1u">
 <spice>
@@ -10479,7 +10546,16 @@ Source: www.kingbright.com</description>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
+<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-4.70KHRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805W" package3d_urn="urn:adsk.eagle:package:23537/1" value="2k2">
 <spice>
 <pinmapping spiceprefix="R">
@@ -10500,7 +10576,7 @@ Source: www.kingbright.com</description>
 </pinmapping>
 </spice>
 <attribute name="DIGIKEY_NR" value="1276-6439-1-ND "/>
-<attribute name="DIGIKEY_PRICE" value="0.1"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
 </part>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -10520,13 +10596,62 @@ Source: www.kingbright.com</description>
 </pinmapping>
 </spice>
 <attribute name="DIGIKEY_NR" value="311-4.70KHRCT-ND"/>
-<attribute name="DIGIKEY_PRICE" value="0.1"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
 </part>
-<part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
-<part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
-<part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
-<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
-<part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k"/>
+<part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-4.70KHRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
+<part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-4.70KHRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
+<part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-4.70KHRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
+<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-4.70KHRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
+<part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="4.7k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="DIGIKEY_NR" value="311-4.70KHRCT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.10"/>
+</part>
+<part name="X6" library="ADC-Erweiterung" deviceset="MOLEX-8738-0343" device="">
+<attribute name="DIGIKEY_NR" value="WM7647CT-ND"/>
+<attribute name="DIGIKEY_PRICE" value="0.81"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -10624,26 +10749,38 @@ Molec für pt100 paralell dazu</text>
 <instance part="R3" gate="G$1" x="76.2" y="78.74" smashed="yes">
 <attribute name="NAME" x="78.74" y="78.9686" size="1.778" layer="95"/>
 <attribute name="VALUE" x="71.12" y="79.248" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="76.2" y="78.74" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="76.2" y="78.74" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R4" gate="G$1" x="76.2" y="76.2" smashed="yes">
 <attribute name="NAME" x="78.74" y="76.4286" size="1.778" layer="95"/>
 <attribute name="VALUE" x="71.12" y="76.708" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="76.2" y="76.2" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="76.2" y="76.2" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R5" gate="G$1" x="76.2" y="73.66" smashed="yes">
 <attribute name="NAME" x="78.74" y="73.8886" size="1.778" layer="95"/>
 <attribute name="VALUE" x="71.12" y="74.168" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="76.2" y="73.66" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="76.2" y="73.66" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R6" gate="G$1" x="76.2" y="71.12" smashed="yes">
 <attribute name="NAME" x="78.74" y="71.3486" size="1.778" layer="95"/>
 <attribute name="VALUE" x="71.12" y="71.628" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="76.2" y="71.12" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="76.2" y="71.12" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R7" gate="G$1" x="76.2" y="68.58" smashed="yes">
 <attribute name="NAME" x="78.74" y="68.8086" size="1.778" layer="95"/>
 <attribute name="VALUE" x="71.12" y="69.088" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="76.2" y="68.58" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="76.2" y="68.58" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R8" gate="G$1" x="93.98" y="66.04" smashed="yes">
 <attribute name="NAME" x="96.52" y="66.2686" size="1.778" layer="95"/>
 <attribute name="VALUE" x="88.9" y="66.548" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="93.98" y="66.04" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="93.98" y="66.04" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND3" gate="1" x="77.47" y="55.88" smashed="yes">
 <attribute name="VALUE" x="74.93" y="53.34" size="1.778" layer="96"/>
@@ -10696,6 +10833,8 @@ Molec für pt100 paralell dazu</text>
 <instance part="R10" gate="G$1" x="-36.83" y="95.25" smashed="yes" rot="R90">
 <attribute name="NAME" x="-37.0586" y="97.79" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="-37.338" y="90.17" size="1.778" layer="96" rot="R90"/>
+<attribute name="DIGIKEY_NR" x="-36.83" y="95.25" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="-36.83" y="95.25" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R11" gate="G$1" x="-36.83" y="74.93" smashed="yes" rot="R90">
 <attribute name="NAME" x="-37.0586" y="77.47" size="1.778" layer="95" rot="R90"/>
@@ -10742,22 +10881,38 @@ Molec für pt100 paralell dazu</text>
 <instance part="R13" gate="G$1" x="7.62" y="85.09" smashed="yes">
 <attribute name="NAME" x="10.16" y="85.3186" size="1.778" layer="95"/>
 <attribute name="VALUE" x="2.54" y="85.598" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="7.62" y="85.09" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="7.62" y="85.09" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R14" gate="G$1" x="7.62" y="81.28" smashed="yes">
 <attribute name="NAME" x="10.16" y="81.5086" size="1.778" layer="95"/>
 <attribute name="VALUE" x="2.54" y="81.788" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="7.62" y="81.28" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="7.62" y="81.28" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R15" gate="G$1" x="7.62" y="77.47" smashed="yes">
 <attribute name="NAME" x="10.16" y="77.6986" size="1.778" layer="95"/>
 <attribute name="VALUE" x="2.54" y="77.978" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="7.62" y="77.47" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="7.62" y="77.47" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R16" gate="G$1" x="7.62" y="73.66" smashed="yes">
 <attribute name="NAME" x="10.16" y="73.8886" size="1.778" layer="95"/>
 <attribute name="VALUE" x="2.54" y="74.168" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="7.62" y="73.66" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="7.62" y="73.66" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R17" gate="G$1" x="7.62" y="69.85" smashed="yes">
 <attribute name="NAME" x="10.16" y="70.0786" size="1.778" layer="95"/>
 <attribute name="VALUE" x="2.54" y="70.358" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="7.62" y="69.85" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="7.62" y="69.85" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="X6" gate="G$1" x="-27.94" y="96.52" smashed="yes">
+<attribute name="NAME" x="-22.86" y="99.06" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-20.32" y="92.71" size="1.778" layer="96"/>
+<attribute name="DIGIKEY_NR" x="-27.94" y="96.52" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PRICE" x="-27.94" y="96.52" size="1.778" layer="96" display="off"/>
 </instance>
 </instances>
 <busses>
@@ -11026,15 +11181,23 @@ Molec für pt100 paralell dazu</text>
 <pinref part="R10" gate="G$1" pin="1"/>
 <wire x1="-36.83" y1="90.17" x2="-36.83" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="R12" gate="G$1" pin="1"/>
-<wire x1="2.54" y1="88.9" x2="-36.83" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="88.9" x2="-22.86" y2="88.9" width="0.1524" layer="91"/>
 <junction x="-36.83" y="88.9"/>
+<pinref part="X6" gate="G$1" pin="3"/>
+<wire x1="-22.86" y1="88.9" x2="-36.83" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="93.98" x2="-22.86" y2="88.9" width="0.1524" layer="91"/>
+<junction x="-22.86" y="88.9"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
 <pinref part="X2" gate="-2" pin="KL"/>
-<wire x1="-43.18" y1="85.09" x2="2.54" y2="85.09" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="85.09" x2="-25.4" y2="85.09" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="X6" gate="G$1" pin="2"/>
+<wire x1="-25.4" y1="85.09" x2="2.54" y2="85.09" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="93.98" x2="-25.4" y2="85.09" width="0.1524" layer="91"/>
+<junction x="-25.4" y="85.09"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -11044,8 +11207,12 @@ Molec für pt100 paralell dazu</text>
 <pinref part="R11" gate="G$1" pin="2"/>
 <wire x1="-36.83" y1="80.01" x2="-36.83" y2="81.28" width="0.1524" layer="91"/>
 <junction x="-36.83" y="81.28"/>
-<wire x1="-36.83" y1="81.28" x2="2.54" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="R14" gate="G$1" pin="1"/>
+<wire x1="-36.83" y1="81.28" x2="-27.94" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="X6" gate="G$1" pin="1"/>
+<wire x1="-27.94" y1="81.28" x2="2.54" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="93.98" x2="-27.94" y2="81.28" width="0.1524" layer="91"/>
+<junction x="-27.94" y="81.28"/>
 </segment>
 </net>
 <net name="N$11" class="0">

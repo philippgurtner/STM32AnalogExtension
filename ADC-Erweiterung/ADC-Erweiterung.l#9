@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.1">
+<eagle version="9.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -390,11 +390,11 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 <text x="-3.81" y="4.445" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="1634503">
-<pad name="P$1" x="-3.13" y="3.13" drill="1.6" diameter="2.8"/>
-<pad name="P$2" x="3.13" y="3.13" drill="1.6" diameter="2.8"/>
-<pad name="P$3" x="-3.13" y="-3.13" drill="1.6" diameter="2.8"/>
-<pad name="P$4" x="3.13" y="-3.13" drill="1.6" diameter="2.8"/>
-<pad name="P$5" x="0" y="0" drill="1.1" diameter="1.9304"/>
+<pad name="5" x="-3.13" y="3.13" drill="1.6" diameter="2.8"/>
+<pad name="2" x="3.13" y="3.13" drill="1.6" diameter="2.8"/>
+<pad name="4" x="-3.13" y="-3.13" drill="1.6" diameter="2.8"/>
+<pad name="3" x="3.13" y="-3.13" drill="1.6" diameter="2.8"/>
+<pad name="1" x="0" y="0" drill="1.1" diameter="1.9304"/>
 <circle x="0" y="0" radius="5.5" width="0.127" layer="21"/>
 <text x="5.08" y="5.08" size="1.016" layer="25">&gt;Name</text>
 <text x="5.08" y="3.81" size="1.016" layer="27">&gt;Value</text>
@@ -460,9 +460,9 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 </symbol>
 <symbol name="MTA-16">
 <wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="80.01" y1="-1.905" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="80.01" y1="-1.905" x2="80.01" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="1.27" x2="80.01" y2="1.27" width="0.254" layer="94"/>
+<wire x1="82.55" y1="-1.905" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="82.55" y1="-1.905" x2="82.55" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="82.55" y2="1.27" width="0.254" layer="94"/>
 <circle x="0" y="0" radius="0.635" width="0.254" layer="94"/>
 <circle x="2.54" y="0" radius="0.635" width="0.254" layer="94"/>
 <circle x="5.08" y="0" radius="0.635" width="0.254" layer="94"/>
@@ -530,6 +530,8 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 <circle x="73.66" y="0" radius="0.635" width="0.254" layer="94"/>
 <circle x="76.2" y="0" radius="0.635" width="0.254" layer="94"/>
 <circle x="78.74" y="0" radius="0.635" width="0.254" layer="94"/>
+<pin name="33" x="81.28" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
+<circle x="81.28" y="0" radius="0.635" width="0.254" layer="94"/>
 </symbol>
 <symbol name="KLV">
 <circle x="1.27" y="0" radius="1.27" width="0.254" layer="94"/>
@@ -727,8 +729,8 @@ Source: http://eshop.phoenixcontact.com .. 1729131.pdf</description>
 <devices>
 <device name="" package="1634503">
 <connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-<connect gate="G$1" pin="2" pad="P$2 P$3 P$4 P$5"/>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2 3 4 5"/>
 </connects>
 <technologies>
 <technology name=""/>
