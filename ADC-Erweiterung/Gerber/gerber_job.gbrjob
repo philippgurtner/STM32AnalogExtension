@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2019-06-06T16:54:05Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.2.1"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "V0.1"
+        },
+        "Owner": "Philipp Gurtner <philipp.gurtner@flowtec.endress.com>",
+        "Size": {
+            "X": 35.54,
+            "Y": 88.9
+        }
+    }
+}
