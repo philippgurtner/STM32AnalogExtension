@@ -28,12 +28,12 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
@@ -57,8 +57,8 @@
 <layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="no" active="no"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="no" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="no" active="no"/>
@@ -77,25 +77,25 @@
 <wire x1="35.54" y1="0" x2="35.54" y2="88.9" width="0" layer="20"/>
 <wire x1="35.54" y1="88.9" x2="0" y2="88.9" width="0" layer="20"/>
 <wire x1="0" y1="88.9" x2="0" y2="0" width="0" layer="20"/>
-<text x="28.194" y="85.598" size="1.016" layer="51" rot="R180">+3.3V</text>
-<text x="28.194" y="83.058" size="1.016" layer="51" rot="R180">GND</text>
-<text x="28.194" y="19.558" size="1.016" layer="51" rot="R180">DRDY</text>
-<text x="28.194" y="22.098" size="1.016" layer="51" rot="R180">RESET</text>
-<text x="28.194" y="24.638" size="1.016" layer="51" rot="R180">START</text>
-<text x="28.194" y="26.924" size="1.016" layer="51" rot="R180">CS</text>
-<text x="28.194" y="29.464" size="1.016" layer="51" rot="R180">MISO</text>
-<text x="28.194" y="34.798" size="1.016" layer="51" rot="R180">SCLK</text>
-<text x="28.194" y="32.258" size="1.016" layer="51" rot="R180">MOSI</text>
-<text x="6.604" y="59.69" size="1.016" layer="51">EX-IN_1</text>
-<text x="6.35" y="38.862" size="1.016" layer="51">EX-IN_2</text>
-<text x="6.35" y="17.018" size="1.016" layer="51">EX-IN_3</text>
-<text x="19.558" y="14.732" size="2" layer="52" rot="MR0">ADC-BOARD
+<text x="28.194" y="85.598" size="1.016" layer="25" rot="R180">+3.3V</text>
+<text x="28.194" y="83.058" size="1.016" layer="25" rot="R180">GND</text>
+<text x="28.194" y="19.558" size="1.016" layer="25" rot="R180">DRDY</text>
+<text x="28.194" y="22.098" size="1.016" layer="25" rot="R180">RESET</text>
+<text x="28.194" y="24.638" size="1.016" layer="25" rot="R180">START</text>
+<text x="28.194" y="26.924" size="1.016" layer="25" rot="R180">CS</text>
+<text x="28.194" y="29.464" size="1.016" layer="25" rot="R180">MISO</text>
+<text x="28.194" y="34.798" size="1.016" layer="25" rot="R180">SCLK</text>
+<text x="28.194" y="32.258" size="1.016" layer="25" rot="R180">MOSI</text>
+<text x="6.604" y="59.69" size="1.016" layer="25">EX-IN_1</text>
+<text x="6.35" y="38.862" size="1.016" layer="25">EX-IN_2</text>
+<text x="6.35" y="17.018" size="1.016" layer="25">EX-IN_3</text>
+<text x="19.558" y="14.732" size="2" layer="26" rot="MR0">ADC-BOARD
 2019
 Noëmi Kurt
 Philipp Gurtner</text>
-<text x="10.922" y="77.47" size="1.016" layer="51" rot="R90">PT100</text>
-<text x="15.494" y="78.74" size="1.016" layer="51">PT100</text>
-<text x="33.02" y="84.836" size="1.016" layer="51">1</text>
+<text x="10.922" y="77.47" size="1.016" layer="25" rot="R90">PT100</text>
+<text x="15.494" y="78.74" size="1.016" layer="25">PT100</text>
+<text x="33.02" y="84.836" size="1.016" layer="25">1</text>
 <text x="2.54" y="84.328" size="1.016" layer="51">1</text>
 <dimension x1="0" y1="88.9" x2="0" y2="0" x3="-3.302" y3="44.45" textsize="1.778" layer="49"/>
 <dimension x1="0" y1="88.9" x2="35.54" y2="88.9" x3="17.77" y3="91.948" textsize="1.778" layer="49"/>
