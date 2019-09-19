@@ -10656,7 +10656,7 @@ Source: www.kingbright.com</description>
 <sheets>
 <sheet>
 <plain>
-<text x="184.15" y="17.78" size="1.6383" layer="91">3V
+<text x="186.69" y="17.78" size="1.6383" layer="91">3V
 GND
 VBAT
 PC13
@@ -10687,7 +10687,7 @@ PB1
 PB2
 PB10
 PB11
-PB1
+PB12
 GND</text>
 <wire x1="-3.81" y1="92.71" x2="-3.81" y2="77.47" width="0.1524" layer="90"/>
 <wire x1="-3.81" y1="77.47" x2="19.05" y2="77.47" width="0.1524" layer="90"/>
@@ -11054,6 +11054,10 @@ GND</text>
 <wire x1="102.87" y1="44.45" x2="102.87" y2="41.91" width="0.1524" layer="91"/>
 <wire x1="102.87" y1="41.91" x2="107.95" y2="41.91" width="0.1524" layer="91"/>
 <junction x="107.95" y="41.91"/>
+<pinref part="IC1" gate="G$1" pin="AINCOM"/>
+<wire x1="97.79" y1="44.196" x2="97.79" y2="41.91" width="0.1524" layer="91"/>
+<wire x1="97.79" y1="41.91" x2="102.87" y2="41.91" width="0.1524" layer="91"/>
+<junction x="102.87" y="41.91"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="CLK"/>
