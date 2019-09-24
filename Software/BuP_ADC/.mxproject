@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=C:/Users/phili/Documents/STM/BuP_ADC/Inc
+HeaderPath=C:/Users/phili/Documents/GitHub/STM32AnalogExtension/Software/BuP_ADC/Inc
 HeaderFiles=stm32f0xx_it.h;stm32f0xx_hal_conf.h;main.h;gpio.h;spi.h;
-SourcePath=C:/Users/phili/Documents/STM/BuP_ADC/Src
+SourcePath=C:/Users/phili/Documents/GitHub/STM32AnalogExtension/Software/BuP_ADC/Src
 SourceFiles=stm32f0xx_it.c;stm32f0xx_hal_msp.c;main.c;gpio.c;spi.c;
 
 [PreviousLibFiles]
