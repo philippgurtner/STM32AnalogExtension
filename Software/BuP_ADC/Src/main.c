@@ -112,7 +112,7 @@ int main(void)
 	  //if(HAL_GPIO_ReadPin(GPIOx, GPIO_Pin))
 
 
-	  if(HAL_GPIO_ReadPin(ADC_DRDY_GPIO_Port, ADC_DRDY_Pin)==0)
+	  /*if(HAL_GPIO_ReadPin(ADC_DRDY_GPIO_Port, ADC_DRDY_Pin)==0)
 	  {
 
 		  uint8_t buf[3]={0,0,0};
@@ -126,8 +126,9 @@ int main(void)
 
 
 	  }
+	  */
 
-	  //ReadADC(1);
+	  ReadADC(1);
 	  HAL_Delay(100);
 	  HAL_GPIO_WritePin(ADC_CS_GPIO_Port,ADC_CS_Pin,1);
 
@@ -181,6 +182,7 @@ uint32_t InitADC(void)
 	uint8_t buf[3] = {0,0,0};
 	uint8_t rxbuf[2]={0,0};
 
+	HAL_Delay(2.2);
 	HAL_GPIO_WritePin(ADC_RESET_GPIO_Port,ADC_RESET_Pin,1); // Set reset
 	HAL_GPIO_WritePin(ADC_CS_GPIO_Port,ADC_CS_Pin,1);
 	HAL_Delay(10);
@@ -234,10 +236,20 @@ uint32_t InitADC(void)
 
 	*/
 
-	buf[0] = 0x42; 		// Select IMPMUX Register
+
+	/////////////// Select INPUT
+	buf[0] = 0x42; 		// Select INPMUX Register
 	buf[1] = 0x00;		// Write 1 Registers
-	buf[2]=0x1C;
+	buf[2]=0x13;
 	HAL_SPI_Transmit(&hspi1,buf,3,10);
+
+
+
+	/////////////// Read Back selected Input
+	buf[0]=0x22;	//Read Statusbyte
+	buf[1]=0x00;	//Lenght 1
+	HAL_SPI_Transmit(&hspi1,buf,2,10);
+	HAL_SPI_Receive(&hspi1, rxbuf,1, 10);
 
 
 	buf[0]= 0x08;	//Start Convertion via Command
@@ -255,18 +267,10 @@ uint32_t ReadADC(uint8_t Channel) 	// Positive ADC input, Negativer ist AINCOM
 	uint8_t buf[3]={0,0,0};
 	uint8_t rxbuf[5];
 
-	if (Channel>5)	// DS124S06 hatt nur 5 Kanäle
+	if (Channel>5)	// DS124S06 hat nur 5 Kanäle
 		return 0;
 
 	HAL_GPIO_WritePin(ADC_CS_GPIO_Port,ADC_CS_Pin,0);
-	HAL_Delay(.5);
-
-	buf[0] = 0x42; 		// Select IMPMUX Register
-	buf[1] = 0x00;		// Write 1 Registers
-	//buf[2] = Channel<<4 | 0x0C; // SET ADMUX, MUXP=Channel, MUXN=AINCOM
-	//buf[2] = Channel<<4 | 0x02;
-	buf[2]=0x1C;
-	HAL_SPI_Transmit(&hspi1,buf,3,10);
 
 
 	HAL_Delay(.5);
@@ -275,17 +279,16 @@ uint32_t ReadADC(uint8_t Channel) 	// Positive ADC input, Negativer ist AINCOM
 	HAL_GPIO_WritePin(ADC_CS_GPIO_Port,ADC_CS_Pin,0);
 	HAL_Delay(.5);
 
-	buf[0]= 0x08;	//Start Convertion via Command
-	HAL_SPI_Transmit(&hspi1,buf,1,10);
 
 	// Delay
 	HAL_Delay(.5);
 	HAL_GPIO_WritePin(ADC_CS_GPIO_Port,ADC_CS_Pin,1);
 	HAL_Delay(.5);
-	//while( !HAL_GPIO_ReadPin(ADC_DRDY_GPIO_Port, ADC_DRDY_Pin) );
+
+	while( HAL_GPIO_ReadPin(ADC_DRDY_GPIO_Port, ADC_DRDY_Pin) );
 
 	HAL_GPIO_WritePin(ADC_CS_GPIO_Port,ADC_CS_Pin,0);
-	HAL_Delay(100);
+	HAL_Delay(1);
 
 	// Eigentlich Warten bis Fertig Konvertiert !!!!!!!!!
 	////////////////////////////////////
@@ -308,7 +311,6 @@ uint32_t ReadADC(uint8_t Channel) 	// Positive ADC input, Negativer ist AINCOM
 
 	buf[0]= 0x12;	//RDATA => Read Data
 	HAL_SPI_Transmit(&hspi1,buf,1,10);
-
 
 	HAL_SPI_Receive(&hspi1, rxbuf,3, 10); //Read Datarate Register --> Ohne CRC und Status
 
