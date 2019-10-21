@@ -52,9 +52,10 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-uint32_t ReadADC(uint8_t Channel);
 uint32_t InitADC(void);
-
+uint32_t ReadADCChannel(uint8_t Channel);
+void writeADC(uint8_t data[], uint8_t length);
+void ReadADC(uint8_t startadress, uint8_t length uint8_t *rxdata);
 
 /* USER CODE END PFP */
 
@@ -115,11 +116,11 @@ int main(void)
 	  /*if(HAL_GPIO_ReadPin(ADC_DRDY_GPIO_Port, ADC_DRDY_Pin)==0)
 	  {
 
-		  uint8_t buf[3]={0,0,0};
+		  uint8_t txbuf[3]={0,0,0};
 		  uint8_t rxbuf[5];
 
-		  buf[0]= 0x12;	//RDATA => Read Data
-		  HAL_SPI_Transmit(&hspi1,buf,1,10);
+		  txbuf[0]= 0x12;	//RDATA => Read Data
+		  HAL_SPI_Transmit(&hspi1,txbuf,1,10);
 
 		  HAL_SPI_Receive(&hspi1, rxbuf,3, 10); //Read Datarate Register --> Ohne CRC und Status
 
@@ -128,7 +129,7 @@ int main(void)
 	  }
 	  */
 
-	  ReadADC(1);
+	  ReadADCChannel(1);
 	  HAL_Delay(100);
 	  HAL_GPIO_WritePin(ADC_CS_GPIO_Port,ADC_CS_Pin,1);
 
@@ -179,8 +180,8 @@ void SystemClock_Config(void)
 
 uint32_t InitADC(void)
 {
-	uint8_t buf[3] = {0,0,0};
-	uint8_t rxbuf[2]={0,0};
+	uint8_t txbuf[18] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	uint8_t rxbuf[18] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 	HAL_Delay(2.2);
 	HAL_GPIO_WritePin(ADC_RESET_GPIO_Port,ADC_RESET_Pin,1); // Set reset
@@ -188,19 +189,24 @@ uint32_t InitADC(void)
 	HAL_Delay(10);
 
 
-	HAL_GPIO_WritePin(ADC_CS_GPIO_Port, ADC_CS_Pin,0);
+	ReadADC(0x21, 1, rxbuf); 	// Read Statusbyte to rxbuf
+	
+
+
+
+	/*HAL_GPIO_WritePin(ADC_CS_GPIO_Port, ADC_CS_Pin,0);
 	HAL_Delay(.5);
 
-	buf[0]=0x21;	//Read Statusbyte
-	buf[1]=0x00;	//Lenght 1
+	txbuf[0]=0x21;	//Read Statusbyte
+	txbuf[1]=0x00;	//Lenght 1
 
-	HAL_SPI_Transmit(&hspi1,buf,2,10);
+	HAL_SPI_Transmit(&hspi1,txbuf,2,10);
 	HAL_SPI_Receive(&hspi1, rxbuf,1, 10);
 
 	HAL_Delay(.5);
 	HAL_GPIO_WritePin(ADC_CS_GPIO_Port,ADC_CS_Pin,1);
 	HAL_Delay(.5);
-
+*/
 	HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, ~(buf[0] & 0x40)); //Read Status, ist ADC Komunikationsbereit
 
 
@@ -211,25 +217,25 @@ uint32_t InitADC(void)
 	//Set Mode:
 	////////////////////////////////////
 	//Read Datarate Register (04h)
-	buf[0]=0x24;
-	buf[1]=0x00;
-	HAL_SPI_Transmit(&hspi1,buf,2,10);
+	txbuf[0]=0x24;
+	txbuf[1]=0x00;
+	HAL_SPI_Transmit(&hspi1,txbuf,2,10);
 	HAL_Delay(1);
 	HAL_SPI_Receive(&hspi1, rxbuf,1, 1);
 
 
 	// Set Modified Datarateregister (04h)
-	buf[0]=	0x44;	// Write Register DATARATE
-	buf[1]= 0x00;	//Write 1 Register
-	buf[2]=	rxbuf[0]|0x20; // Set Modebit
-	HAL_SPI_Transmit(&hspi1,buf,3,10);
+	txbuf[0]= 0x44;	// Write Register DATARATE
+	txbuf[1]= 0x00;	//Write 1 Register
+	txbuf[2]= rxbuf[0]|0x20; // Set Modebit
+	HAL_SPI_Transmit(&hspi1,txbuf,3,10);
 
 
 	// DEBUG
 	//Read Datarate Register (04h) für Debugzwecke ob richtig geantowrted wird.
-	buf[0]=0x24;
-	buf[1]=0x00;
-	HAL_SPI_Transmit(&hspi1,buf,2,10);
+	txbuf[0]=0x24;
+	txbuf[1]=0x00;
+	HAL_SPI_Transmit(&hspi1,txbuf,2,10);
 	HAL_Delay(1);
 	HAL_SPI_Receive(&hspi1, rxbuf,1, 1);
 
@@ -237,23 +243,31 @@ uint32_t InitADC(void)
 	*/
 
 
-	/////////////// Select INPUT
-	buf[0] = 0x42; 		// Select INPMUX Register
-	buf[1] = 0x00;		// Write 1 Registers
-	buf[2]=0x13;
-	HAL_SPI_Transmit(&hspi1,buf,3,10);
+	
 
+	/////////////// Select INPUT
+	/*txbuf[0] = 0x42; 		// Select INPMUX Register
+	txbuf[1] = 0x00;		// Write 1 Registers
+	txbuf[2]=0x13;
+	HAL_SPI_Transmit(&hspi1,txbuf,3,10);
+*/
+
+	startadress = 0x02
+	txbuf[0] = 0x42; 		// Select INPMUX Register
+	// Lenght wird automaisch gesetzt
+	txbuf[2]=0x13;
+	writeADC(txbuf, 1);
 
 
 	/////////////// Read Back selected Input
-	buf[0]=0x22;	//Read Statusbyte
-	buf[1]=0x00;	//Lenght 1
-	HAL_SPI_Transmit(&hspi1,buf,2,10);
+	txbuf[0]=0x22;	//Read Statusbyte
+	txbuf[1]=0x00;	//Lenght 1
+	HAL_SPI_Transmit(&hspi1,txbuf,2,10);
 	HAL_SPI_Receive(&hspi1, rxbuf,1, 10);
 
 
-	buf[0]= 0x08;	//Start Convertion via Command
-	HAL_SPI_Transmit(&hspi1,buf,1,10);
+	txbuf[0]= 0x08;	//Start Convertion via Command
+	HAL_SPI_Transmit(&hspi1,txbuf,1,10);
 
 
 	HAL_Delay(1);
@@ -262,9 +276,62 @@ uint32_t InitADC(void)
 	return 0;
 }
 
-uint32_t ReadADC(uint8_t Channel) 	// Positive ADC input, Negativer ist AINCOM
+
+void ADCwrite_1register(uint8_t startadress, uint8_t data)
 {
-	uint8_t buf[3]={0,0,0};
+	uint8_t *txdata = data;
+	writeADC (startadress, 1, tx)
+	
+}
+
+
+void writeADC(uint8_t startadress, uint8_t length, uint8_t *data)
+{
+	if(length==0 && length >0x11)	// sonst werden keine Daten gesendet, 0x11= Max register anzahl (vgl. Table 25. Datenblatt) 
+	{	
+		return 0;
+	}
+	
+	uint8_t txdata[length+2];
+	txdata[0]= startadress | 0x40; 	// set write command
+	txdata[1]= length -1; 	// 0x00 is 1 byte
+	
+	for(uint8_t i=0; i<length, i++)	// Dateiinhalt in txdata plazieren
+	{
+		txdata[i+2]= data+i;
+	}
+	
+	
+	HAL_GPIO_WritePin(ADC_CS_GPIO_Port, ADC_CS_Pin,0);
+	HAL_Delay(.5);
+
+	HAL_SPI_Transmit(&hspi1,txdata,length+2,10);
+	
+	HAL_Delay(.5);
+	HAL_GPIO_WritePin(ADC_CS_GPIO_Port,ADC_CS_Pin,1);
+}
+
+void ReadADC(uint8_t startadress, uint8_t length uint8_t *rxdata) 	// Speichert rückgabe in rxdata 
+{
+	uint8_t txdata[2] = {startadress |0x20 , length-1};	// create array for spi transmit
+	
+	HAL_GPIO_WritePin(ADC_CS_GPIO_Port, ADC_CS_Pin,0);
+	HAL_Delay(.5);
+
+	HAL_SPI_Transmit(&hspi1,txdata, length,	  10);
+	HAL_SPI_Receive(&hspi1, rxdata, length-1, 10);
+
+	HAL_Delay(.5);
+	HAL_GPIO_WritePin(ADC_CS_GPIO_Port,ADC_CS_Pin,1);
+}
+
+
+
+
+
+uint32_t ReadADCChannel(uint8_t Channel) 	// Positive ADC input, Negativer ist AINCOM
+{
+	uint8_t txbuf[3]={0,0,0};
 	uint8_t rxbuf[5];
 
 	if (Channel>5)	// DS124S06 hat nur 5 Kanäle
@@ -309,8 +376,8 @@ uint32_t ReadADC(uint8_t Channel) 	// Positive ADC input, Negativer ist AINCOM
 	//
 
 
-	buf[0]= 0x12;	//RDATA => Read Data
-	HAL_SPI_Transmit(&hspi1,buf,1,10);
+	txbuf[0]= 0x12;	//RDATA => Read Data
+	HAL_SPI_Transmit(&hspi1,txbuf,1,10);
 
 	HAL_SPI_Receive(&hspi1, rxbuf,3, 10); //Read Datarate Register --> Ohne CRC und Status
 
