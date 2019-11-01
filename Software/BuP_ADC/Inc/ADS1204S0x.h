@@ -65,7 +65,7 @@
 /*	Device Status (STATUS) Register
  *	address = 0x01 , reset = 0x80
  *
-/*   Bit 7   |   Bit 6   |   Bit 5   |   Bit 4   |   Bit 3   |   Bit 2   |   Bit 1   |   Bit 0
+ *   Bit 7   |   Bit 6   |   Bit 5   |   Bit 4   |   Bit 3   |   Bit 2   |   Bit 1   |   Bit 0
  *--------------------------------------------------------------------------------------------
  *   FL_POR  |    nRDY   | FL_P_RAILP| FL_P_RAILN| FL_N_RAILP| FL_N_RAILN| FL_REF_L1 | FL_REF_L0
  *
@@ -193,8 +193,8 @@
 #define ADS_REFP_BYP_DISABLE	0x20	 
 #define ADS_REFP_BYP_ENABLE		0x00	// default
 /* Negative reference buffer bypass*/
-#define ADS_REFN_BYP_DISABLE	0x10	
-#define ADS_REFN_BYP_ENABLE		0x00	// default
+#define ADS_REFN_BYP_DISABLE	0x10	// default
+#define ADS_REFN_BYP_ENABLE		0x00
 /*Reference input selection */
 #define ADS_REFSEL_P0			0x00	// default REFP0, REFN0 
 #define ADS_REFSEL_P1			0x04	// REFP1, REFN1

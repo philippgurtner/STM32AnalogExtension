@@ -24,7 +24,7 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi_ex.h ../Inc/spi.h \
- ../Inc/main.h ../Inc/gpio.h
+ ../Inc/main.h ../Inc/gpio.h ../Inc/ADS1204S0x.h
 
 ../Inc/main.h:
 
@@ -83,3 +83,5 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 ../Inc/main.h:
 
 ../Inc/gpio.h:
+
+../Inc/ADS1204S0x.h:
