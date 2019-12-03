@@ -1,0 +1,15 @@
+ADCBoard.c:26:6:ADC_DRDY_InputHandler	8	static
+ADCBoard.c:33:10:ADCinit	8	static
+ADCBoard.c:80:6:ADCregwrite	24	static
+ADCBoard.c:90:9:ADCregread	32	static
+ADCBoard.c:99:6:ADCstart	8	static
+ADCBoard.c:111:9:ADCwriteRegs	72	dynamic
+ADCBoard.c:154:9:ADCreadRegs	32	static
+ADCBoard.c:187:6:ADCsendCommand	24	static
+ADCBoard.c:205:10:ADRreadInput	32	static
+ADCBoard.c:257:9:setADCsigleChannel	16	static
+ADCBoard.c:280:10:readsingleADCChannel	16	static
+ADCBoard.c:300:7:read_temperature	40	static
+ADCBoard.c:342:7:calc_R_temperature	40	static
+ADCBoard.c:356:7:calctemperature	32	static
+ADCBoard.c:384:7:calcAnalogvoltage	24	static
