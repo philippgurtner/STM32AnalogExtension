@@ -404,4 +404,6 @@
  */
 #define CHIP_SELECT_WAIT_TIME	0
 
+
+
 #endif /* ADS124S0x_H_ */

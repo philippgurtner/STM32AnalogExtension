@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2019-12-03T13:44:01Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.5.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "V0.2"
+        },
+        "Owner": "Philipp Gurtner <philippgurtner24@gmail.com>",
+        "Size": {
+            "X": 35.54,
+            "Y": 88.9
+        }
+    }
+}
