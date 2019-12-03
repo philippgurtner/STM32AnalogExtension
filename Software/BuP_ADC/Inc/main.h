@@ -54,6 +54,7 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
+extern void ADC_DRDY_InputHandler(void);
 
 /* USER CODE END EFP */
 
@@ -66,6 +67,7 @@ void Error_Handler(void);
 #define ADC_RESET_GPIO_Port GPIOC
 #define ADC_DRDY_Pin GPIO_PIN_0
 #define ADC_DRDY_GPIO_Port GPIOB
+#define ADC_DRDY_EXTI_IRQn EXTI0_1_IRQn
 #define LD4_Pin GPIO_PIN_8
 #define LD4_GPIO_Port GPIOC
 #define LD3_Pin GPIO_PIN_9
