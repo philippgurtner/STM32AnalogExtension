@@ -102,29 +102,3 @@ wenn noch nicht alle gelesen, dann:
 
 
 
-## Funktionen
-
-### ADC Initialisieren
-
-```
-
-```
-
-
-
-### ADCregwrite
-
-Schreibt ein Register des ADCs über SPI
-
-Parameter:
-
-- uint8_t startadress :  Adresse des zu 
-
-```c
-void ADCregwrite(uint8_t startadress, uint8_t data)
-{
-	uint8_t txdata[1] = {data};
-	writeADC(startadress, 1, txdata);
-}
-```
-

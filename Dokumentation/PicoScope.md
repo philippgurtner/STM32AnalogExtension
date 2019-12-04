@@ -23,13 +23,13 @@ Die Digitalen Kanäle befinden sich beim 16-Pin Stecker in der Mitte. Das Mitgel
 
    2. Kanal intelligent benennen
 
-      ![Digitale Kanäle](C:\Users\phili\Documents\GitHub\STM32AnalogExtension\Dokumentation\Bilder\PicoScope_Channelsettings.PNG)
+      ![Digitale Kanäle](..\Dokumentation\Bilder\PicoScope_Channelsettings.PNG)
 
 2. Hinzufügen eines Seriellen Encoders:
 
    1. Werkzeuge > Serielle Entschlüsselung -> Erstellen > SPI >
 
-![SPI Analyser MISO and MOSI](C:\Users\phili\Documents\GitHub\STM32AnalogExtension\Dokumentation\Bilder\PicoScope_SPI_Settings.PNG)
+![SPI Analyser MISO and MOSI](..\Dokumentation\Bilder\PicoScope_SPI_Settings.PNG)
 
 3. Setzen des Triggers (In der untersten Leiste)
    1. Trigger: Einzeln
@@ -54,4 +54,4 @@ HAL_SPI_Transmit(&hspi1,au8_txdata,3,10);
 HAL_GPIO_WritePin(ADC_CS_GPIO_Port, ADC_CS_Pin,1);
 ```
 
-![SPI Set Channel](C:\Users\phili\Documents\GitHub\STM32AnalogExtension\Dokumentation\Bilder\SPI_Analyse_Setchannel.PNG)
+![SPI Set Channel](..\Dokumentation\Bilder\SPI_Analyse_Setchannel.PNG)
