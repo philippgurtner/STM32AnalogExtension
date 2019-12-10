@@ -68,7 +68,70 @@ Der ADC besitzt ein Serial Peripherie Interface (SPI). Über diese kann mit dem 
 ### Funktion der Schaltung / Überlegungen
 Dank folgender Rechnung wird ersichtlich wie die Spannung über dem PT100 berechnet werden kann. Dies funktioniert nach der theoretischen Betrachtung in Abbildung 4.
 Es werden hier alle anderen Spannungen herausgerechnet. 
+
+
+## Auswertung V0.1 
+### Hardware
+Während der Lötarbeit konnten wir nichts Auffälliges erkennen, was beim Löten problematisch werden könnte. Erst beim Konfigurieren der SPI-Schnittstelle mit der STM32CubeMX-Software, haben wir festgestellt, dass die SPI-Schnittstelle nicht frei auf alle Pins mapbar ist, wie wir das fälschlicherweise aus dem Datenblatt gelesen haben.
+Somit müssen am Schema noch einige Anpassungen gemacht werden. Weiter haben wir auch während der Bearbeitung gemerkt, dass der ADC mit Differenzmessung arbeitet. Dies bedeutet, er misst die Differenz zwischen zwei Kanälen. Möchte man eine Spannung absolut messen, so muss dies mit einer Differenzmessung zu Masse erfolgen. Der Chip bietet die Möglichkeit im INPMUX-Register als negative Referenz den AINCOM-Pin zu verwenden, der aber mit Masse verbunden sein sollte.
+Für die ersten Versuche mit dem Prototyp haben wir die Kontakte auf der Leiterplatte korrigiert, so dass wir Tests durchführen konnten. Als Erweiterung für die nächste Version wäre zusätzlich eine Stiftleiste vorzusehen, dass die SPI-Analyse einfacher mit einem Logicanalyzer erfolgen kann. Dies hat auch einen Vorteil für den späteren Unterricht, so kann die SPI-Schnittstelle einfacher analysiert werden. 
+
+In der nachfolgenden Tabelle sind die Leiterplattenänderungen festgehalten:
+
+|    WAS                       |    von                 |    Nach                                        |    div.                                                                                                          |   |
+|------------------------------|------------------------|------------------------------------------------|------------------------------------------------------------------------------------------------------------------|---|
+|    Clock                     |    PA4                 |    PA5                                         |    SPI                                                                                                           |   |
+|    MOSI                      |    PA5                 |    PA7                                         |    SPI                                                                                                           |   |
+|    CS                        |    PA7                 |    PF5                                         |    SPI                                                                                                           |   |
+|    AINCOM                    |    Nc                  |    GND                                         |    Differenzmessung                                                                                              |   |
+|    Stiftleiste               |                        |                                                |    Für Debugging / SPI-Analyse                                                                                   |   |
+|    Widerstände   R12-R14     |    Eingang von ADC     |    weglassen                                   |    Können Störungen auf   Messleitung verursachen                                                                |   |
+|    BNC-Abschwächer           |    2.2k Ohm            |    Spannungsteiler mit 47kOhm und   2.2kOhm    |    Somit können Eingangsspannungen   bis zu 50V angelegt werden und nicht nur 2.5V über die Interne Referenz     |   |
+|    5.08mm   schraubklemme    |    Weglassen           |                                                |    So können die Temperatursignale   direkter und präziser geroutet werden. Der Stecker wird nicht benötigt.     |   |
+|    Kondensatoren   1uF       |    AIN0, AIN1, AIN2    |    GND                                         |    Filterung der Temp Messung                                                                                    |   |
+|    Kondensator   1uF         |    AIN0                |    AIN1                                        |    Filterung der Temp Messung                                                                                    |   |
+
+
+## Softwarerealisierung 
+### Konfiguration mit STM32CubeMX
+Vorzunehmende Konfigurationen in STM32CubeMX, um die SPI-Schnittstelle zu verwenden: 
+Beim Starten das STM32F0-Discovery Board auswählen, so werden die Taster und LEDs richtig initialisiert
+-   Pinout & Konfiguration:
+    - Pinkonfiguration
+        - PF5: 	ADC_CS
+        - PC4: 	ADC_START
+        - PC5: 	ADC_RESET
+        - PB0: 	ADC_DRDY
+    - Modul Connectivity --> SPI1 hinzufügen
+        - Data Size: 	8Bit
+        - Prescaler:
+        - First Bit: 	MSB First
+        - Clock Polarity (CPOL): 	LOW
+        - Clock Phase (CPHA): 		2 Edge
+- Project Manger
+    - Code Generator
+    - Generate Files: Generate peripheral initialization as a pair... 
+        (So wird nicht eine lange main.c-Datei erzeugt)
+
+### Verwenden von HAL-Library 
+Hardware Abstraction Librarys, kurz HAL, dienen dazu unabhängig von der verwendeten Hardware, eine Software zu schreiben. So kann eine mit HAL geschriebene Software einfach auf ein anderes System portiert werden und das System übernimmt die Hardwaresteuerung, so dass der Nutzercode nicht (gross) angepasst werden muss. So wird zum Beispiel das Schreiben eines Pins ganz einfach, man muss sich nicht mehr überlegen wo der gerade angeschlossen ist, man benutzt einfach das Userlabel zum Pin. 
+```c
+HAL_GPIO_WritePin(ADC_CS_GPIO_Port, ADC_CS_Pin,X)
+// X=1 --> Ausgang wird auf 1 gesetzt
+// X=0 --> Ausgang wird auf 0 gesetzt
+```
+
+### SPI-Analyse mit Logicanalyzer
+Erweiterungen siehe Anhang
+In vielen Fällen kann es hilfreich sein, wenn man mit einem Busprotokoll arbeitet, dieses auch zu messen. Es stand uns dazu ein PicoScope6 zur Verfügung. Sie können bis zu 16 Digitalanalysen und 2 Analoganalysen machen. Es ist ein Oszilloskop ohne Bildschirm. In der Software (Für Windows, MacOS und Linux) kann man das PicoScope steuern. Folgend unsere Erfahrungen. 
+Im Anhang befindet sich eine Anleitung wie man eine Analyse der SPI Daten machen kann. (Ebenfalls zu finden unter: https://github.com/philippgurtner/STM32AnalogExtension > Dokumentation.)
+
+
+
+
+```math
 \mathrm{ADC0}=U_{\mathrm{Leiter}}+U_{\mathrm{PT100}}+U_{\mathrm{Leiter}}+U_{\mathrm{Mess}}\bigm\mathrm{ADC1}=U_{\mathrm{Leiter}}+U_{\mathrm{Mess}}\bigm\mathrm{ADC2}=U_{\mathrm{Mess}}\bigmU_{\mathrm{PT100}}=\mathrm{ADC0}-2\times U_{\mathrm{Leiter}}-U_{\mathrm{Mess}}\bigmU_{\mathrm{PT100}}=\mathrm{ADC0}-2\times\left(\mathrm{ADC1}-\mathrm{ADC2}\right)-\mathrm{ADC2\bigm}U_{\mathrm{PT100}}=\mathrm{ADC0}-2\times\mathrm{ADC1}+\mathrm{ADC2}
+```
 ### Dimensionierungen und Berechnungen
 Als Temperatursensor wird ein PT100 verwendet. Nach Spezifikation hat der Temperatursensor bei 0°C einen 100Ω Widerstand. Je nach Temperatur verändert sich der Widerstand, nach einer bestimmten Kurve. 
 Als Messstrom wird bei 0°C 0.5mA verwendet. Da sich der Temperatursensor selbst erwärmt darf dieser Messstrom nicht zu hoch gewählt werden.
