@@ -1,8 +1,81 @@
 # STM32AnalogExtension
-Für die Bereichsübergreifende Projekte unserer Schule solte eine Erweiterung für das STM32F051Discovery Kit erstellt werden. 
-Dieses Projekt ist eine Analoge Erweiterung mit einem 24Bit 4kSps externen ADC. 
+In diesem repository befinden sich die Daten für eine analog Erweiterung, bestehend aus einem externen ADC für das STM32F0-Discovery Board. 
+Im weiteren ist die Komplette Dokumentation, so dass die Projektschritte verstanden werden können und auch das Projekt verständlich wird. 
+
+Das Projekt ist OpenSource & darf frei verwendet werden. 
+Ich hoffe viel freude damit zu bereiten. 
+:)
+
+
+# Projektdokumentation
+
+## Aufgabe
+Für die Bereichsübergreifende Projekte der Schule solte eine Erweiterung für das STM32F051Discovery Kit erstellt werden. 
+Dieses Projekt ist eine Analoge Erweiterung mit einem 24Bit 4kSps externen ADC. Dabei ist wichtig dass die Erweiterung mit SPI Angesteuert wird. 
 Mehr im Fokus des Projektes stand die Einfachheit, so das das Produkt einfach angewendet werden kann, als es Sehr genau ist. 
-So wurde bei der Temperaturmessung auf die Konstantstromquelle Verzichtet, jedoch können zukünfitge anwender die Tolle auflösung mit allen Problemen und Hürden selbst erfahren. 
+So wurde bei der Temperaturmessung auf die Konstantstromquelle Verzichtet, jedoch können zukünfitge Anwender die tolle Auflösung mit allen Problemen und Hürden selbst erfahren. 
+
+### Vorgaben
+-	Es soll nur eine Seite für Anschlüsse genutzt werden
+-	Die Erweiterungsplatine sitzt also zur rechten oder linken Seite des STM32F0-Board
+-	Die Seite wird durch die Versorgungsspannung vorgegeben, wenn möglich 3V
+-	Platinendicke 1,6mm
+-	Lagenanzahl: 2
+-	Bestückungsdruck: Schriftgrösse 1mm  Name der Bauteile, Stecker Pin 1, Signalnamen Stecker 
+    - 2mm Name Projekt, Datum, Namen der Ersteller
+-	Line Space ≥200μm
+-	GND-Plane
+-	Abmessung Discovery-Board: 33Pin Header
+
+### Zielsetzung
+- Das Board muss passend als Erweiterung für das Devboard sein, so dass es einfach adaptiert werden kann. 
+- Die Hauptanwendung besteht darin einen 3-Leiter PT100 zu messen.
+- Weiter soll möglich sein, durch eine Buchse eine eigene Messspannung hinzuzuführen, so dass auch diese digitalisiert werden kann. 
+- Durch einen hochauflösenden ADC (>16Bit) werden dann hohe Genauigkeiten möglich.
+
+
+## Grundlagen
+### Analog-Digital-Converter (ADC)
+Die Aufgabe eines ADC’s, ist die Umwandlung von analogen Signalen zu digitalen Daten. Dabei sind mehrere Faktoren wichtig, wie SampleRate und Auflösung (Bittiefe). Um die Signale zu ermitteln müssen wir wissen, was für eine Auflösung der ADC hat. Denn mit diesem, wissen wir wie fein wir das analoge Signal aufteilen können und so die digitalen Werte erhalten. Anhand der SampleRate sehen wir, wie viel Mal der ADC in der Sekunde das analoge Signal maximal abtasten kann. Mit diesen beiden Werten können wir dann in der Software die Werte in unser Signal umrechnen.
+### Temperatursensorschaltungen
+Um einen Temperatursensor anzuschliessen gibt es verschiedene Möglichkeiten. Diese sind für thermisch abhängige Widerstände, welche als Temperatursensoren funktionieren. Zum Beispiel PT100 oder PT1000. 
+#### Zweileiter-Messung
+Der Messwiderstand (Temperatursensor) wird über dieselbe Leitung gespiesen wie auch die Temperatur gemessen wird. Daher, dass über die Leitungen ebenfalls etwas Spannung abfällt, wird dieser Fehler nicht mit einberechnet und wird zu einem Messfehler. 
+#### Dreileiter- Messung
+Bei der Dreileitermessung wird der Messwiderstand über eine zusätzliche Leitung mit Strom versorgt. Daher fällt einerseits der Messfehler der Spannung weg, da die Temperatur über eine unbelastete Leitung gemessen werden kann. Da der Strom I=0A auf der Messleitung ist kann auf der gemeinsamen Leitung der Messfehler herausgerechnet werden -> Siehe Anwendung. 
+#### Vierleiter- Messung
+Bei einer Vierleitermessung werden der Messstrom und die Messspannung je auf einer separaten Leitung geführt. So kann der Widerstand komplett ohne Spannungsabfall auf der Messleitung gemessen werden.
+
+
+\todo bild
+## Evaluation
+###	ADC
+Beim Evaluieren eines ADC’s gibt es sehr viele Möglichkeiten. Die wichtigsten Eigenschaften sind Auflösung (Bittiefe) und Geschwindigkeit (Samples per Second). 
+Für dieses Projekt spielt die Geschwindigkeit keine grosse Rolle, da Prozesswerte abgefragt werden möchten und es sich nicht um eine Digitalisierung eines hochfrequenten Signals handelt. 
+Die Auflösung spielt für dieses Projekt die grössere Rolle. Da gezeigt werden möchte wie genau der ADC ist, soll die Temperatur des Temperatursensors ohne jegliche Verstärkung gemessen werden. 
+Die Berechnungen zu der Temperaturauflösung sind in Tabelle 1 zu finden. \todo
+### Temperatursensor
+Als Temperatursensor eignet sich ein thermisch abhängiger Widerstand sehr gut. Diese werden oft auch in Industrieanlagen verwendet. Da gerade ein fertiger PT100 Sensor an Lager ist wird dieser Verwendet, er benötigt nur eine Buchse auf der Platine um den Sensor anzuhängen. 
+###	Weitere Anschlüsse
+Als zusätzliche Anschlüsse wurden BNC Buchsen ausgewählt. Durch ihre Standardisierung und häufigen gebrauch eignen sie sich gut um weitere Signale anzulegen und zu messen. 
+Es können dann entweder Oszilloskop-Messspitzen oder auch Adapter auf andere Hochfrequenz Stecker, wie auch auf Bananenbuchse verwendet werden. 
+
+## Schaltungsaufbau
+### 3-Leitermessung
+Für diese Schaltung wird eine Dreileiter-Messung für den Temperatursensor verwendet, da diese sehr einfach aufzubauen, wie auch dann interessant zu verarbeiten ist. Weiter sind hier nur 3 ADC Kanäle nötig obwohl wie bei einer 4-Leiter Messung auch der Widerstand der Messleitung herausgerechnet werden kann.  
+### ADC-Serial Interface
+Der ADC besitzt ein Serial Peripherie Interface (SPI). Über diese kann mit dem Microcontroller kommuniziert werden. Damit die Peripherie nicht per Bit-Banging angesteuert werden muss, müssen die SPI-Anschlüsse beim Microcontroller an einen SPI fähigen Port geroutet werden.
+### Funktion der Schaltung / Überlegungen
+Dank folgender Rechnung wird ersichtlich wie die Spannung über dem PT100 berechnet werden kann. Dies funktioniert nach der theoretischen Betrachtung in Abbildung 4.
+Es werden hier alle anderen Spannungen herausgerechnet. 
+\mathrm{ADC0}=U_{\mathrm{Leiter}}+U_{\mathrm{PT100}}+U_{\mathrm{Leiter}}+U_{\mathrm{Mess}}\bigm\mathrm{ADC1}=U_{\mathrm{Leiter}}+U_{\mathrm{Mess}}\bigm\mathrm{ADC2}=U_{\mathrm{Mess}}\bigmU_{\mathrm{PT100}}=\mathrm{ADC0}-2\times U_{\mathrm{Leiter}}-U_{\mathrm{Mess}}\bigmU_{\mathrm{PT100}}=\mathrm{ADC0}-2\times\left(\mathrm{ADC1}-\mathrm{ADC2}\right)-\mathrm{ADC2\bigm}U_{\mathrm{PT100}}=\mathrm{ADC0}-2\times\mathrm{ADC1}+\mathrm{ADC2}
+### Dimensionierungen und Berechnungen
+Als Temperatursensor wird ein PT100 verwendet. Nach Spezifikation hat der Temperatursensor bei 0°C einen 100Ω Widerstand. Je nach Temperatur verändert sich der Widerstand, nach einer bestimmten Kurve. 
+Als Messstrom wird bei 0°C 0.5mA verwendet. Da sich der Temperatursensor selbst erwärmt darf dieser Messstrom nicht zu hoch gewählt werden.
+Um den geflossenen Strom durch den ADC zu messen, wird über einem präzisen Referenzwiderstand die Spannung gemessen, welche vom Messstrom erzeugt wird.
+
+
+
 
 
 Anschlüsse:
