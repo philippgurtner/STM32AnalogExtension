@@ -126,6 +126,25 @@ Erweiterungen siehe Anhang
 In vielen Fällen kann es hilfreich sein, wenn man mit einem Busprotokoll arbeitet, dieses auch zu messen. Es stand uns dazu ein PicoScope6 zur Verfügung. Sie können bis zu 16 Digitalanalysen und 2 Analoganalysen machen. Es ist ein Oszilloskop ohne Bildschirm. In der Software (Für Windows, MacOS und Linux) kann man das PicoScope steuern. Folgend unsere Erfahrungen. 
 Im Anhang befindet sich eine Anleitung wie man eine Analyse der SPI Daten machen kann. (Ebenfalls zu finden unter: https://github.com/philippgurtner/STM32AnalogExtension > Dokumentation.)
 
+## Softwarefunktionen
+Einen kurzen Einblick in die Funktionen welche eingesetzt werden. Weitere Details können dem Code entnommen werden. 
+### Registermanipulation
+Zum Schreiben und lesen von Registern gibt es die Funktionen (Auszug .h File): 
+
+\todo
+
+Wenn nur ein Register gelesen / geschrieben werden muss, so kann jeweils die ADCreg**** Funktion benutzt werden
+### Commands
+Der ADC kann über verschiedene Kommandos gesteuert werden. Diese sind alle in der "ADS1204S0x.h" Datei definiert.
+```c
+void ADCsendCommand(uint8_t op_code);
+```
+Der Funktion können die Verschiedenen op_codes mitgegeben werden. 
+
+### Berechnungsfunktionen
+#### ADC Werte auslesen
+Um die Spannung über dem PT100 zu berechnen, werden alle Spannungen der drei ADC`s ausgelesen. Wie hier dargestellt messen die ADC`s folgende Spannungen:
+
 
 
 
