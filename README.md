@@ -78,18 +78,18 @@ Für die ersten Versuche mit dem Prototyp haben wir die Kontakte auf der Leiterp
 
 In der nachfolgenden Tabelle sind die Leiterplattenänderungen festgehalten:
 
-|    WAS                       |    von                 |    Nach                                        |    div.                                                                                                          |   |
-|------------------------------|------------------------|------------------------------------------------|------------------------------------------------------------------------------------------------------------------|---|
-|    Clock                     |    PA4                 |    PA5                                         |    SPI                                                                                                           |   |
-|    MOSI                      |    PA5                 |    PA7                                         |    SPI                                                                                                           |   |
-|    CS                        |    PA7                 |    PF5                                         |    SPI                                                                                                           |   |
-|    AINCOM                    |    Nc                  |    GND                                         |    Differenzmessung                                                                                              |   |
-|    Stiftleiste               |                        |                                                |    Für Debugging / SPI-Analyse                                                                                   |   |
-|    Widerstände   R12-R14     |    Eingang von ADC     |    weglassen                                   |    Können Störungen auf   Messleitung verursachen                                                                |   |
-|    BNC-Abschwächer           |    2.2k Ohm            |    Spannungsteiler mit 47kOhm und   2.2kOhm    |    Somit können Eingangsspannungen   bis zu 50V angelegt werden und nicht nur 2.5V über die Interne Referenz     |   |
-|    5.08mm   schraubklemme    |    Weglassen           |                                                |    So können die Temperatursignale   direkter und präziser geroutet werden. Der Stecker wird nicht benötigt.     |   |
-|    Kondensatoren   1uF       |    AIN0, AIN1, AIN2    |    GND                                         |    Filterung der Temp Messung                                                                                    |   |
-|    Kondensator   1uF         |    AIN0                |    AIN1                                        |    Filterung der Temp Messung                                                                                    |   |
+|    WAS                       |    von                 |    Nach                                        |    div.                                                                                                          |
+|------------------------------|------------------------|------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+|    Clock                     |    PA4                 |    PA5                                         |    SPI                                                                                                           |
+|    MOSI                      |    PA5                 |    PA7                                         |    SPI                                                                                                           |
+|    CS                        |    PA7                 |    PF5                                         |    SPI                                                                                                           |
+|    AINCOM                    |    Nc                  |    GND                                         |    Differenzmessung                                                                                              |
+|    Stiftleiste               |                        |                                                |    Für Debugging / SPI-Analyse                                                                                   |
+|    Widerstände   R12-R14     |    Eingang von ADC     |    weglassen                                   |    Können Störungen auf   Messleitung verursachen                                                                |
+|    BNC-Abschwächer           |    2.2k Ohm            |    Spannungsteiler mit 47kOhm und   2.2kOhm    |    Somit können Eingangsspannungen   bis zu 50V angelegt werden und nicht nur 2.5V über die Interne Referenz     |
+|    5.08mm   schraubklemme    |    Weglassen           |                                                |    So können die Temperatursignale   direkter und präziser geroutet werden. Der Stecker wird nicht benötigt.     |
+|    Kondensatoren   1uF       |    AIN0, AIN1, AIN2    |    GND                                         |    Filterung der Temp Messung                                                                                    |
+|    Kondensator   1uF         |    AIN0                |    AIN1                                        |    Filterung der Temp Messung                                                                                    |                                                                         |   |
 
 
 ## Softwarerealisierung 
