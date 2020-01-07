@@ -1,19 +1,19 @@
 # STM32AnalogExtension
-In diesem repository befinden sich die Daten für eine analog Erweiterung, bestehend aus einem externen ADC für das STM32F0-Discovery Board. 
-Im weiteren ist die Komplette Dokumentation, so dass die Projektschritte verstanden werden können und auch das Projekt verständlich wird. 
+In diesem Repository befinden sich die Daten für eine analog Erweiterung, bestehend aus einem externen ADC für das STM32F0-Discovery Board. 
+Im weiteren ist die komplette Dokumentation, so dass die Projektschritte verstanden werden können und auch das Projekt verständlich wird. 
 
-Das Projekt ist OpenSource & darf frei verwendet werden. 
-Ich hoffe viel freude damit zu bereiten. 
+Das Projekt ist OpenSource & darf frei verwendet (und so auch gerne verbessert) werden. 
+Ich hoffe viel Freude damit zu bereiten. 
 :)
 
 
 # Projektdokumentation
 
 ## Aufgabe
-Für die Bereichsübergreifende Projekte der Schule solte eine Erweiterung für das STM32F051Discovery Kit erstellt werden. 
+Für die Bereichsübergreifende Projekte der Schule sollte eine Erweiterung für das STM32F051Discovery Kit erstellt werden. 
 Dieses Projekt ist eine Analoge Erweiterung mit einem 24Bit 4kSps externen ADC. Dabei ist wichtig dass die Erweiterung mit SPI Angesteuert wird. 
 Mehr im Fokus des Projektes stand die Einfachheit, so das das Produkt einfach angewendet werden kann, als es Sehr genau ist. 
-So wurde bei der Temperaturmessung auf die Konstantstromquelle Verzichtet, jedoch können zukünfitge Anwender die tolle Auflösung mit allen Problemen und Hürden selbst erfahren. 
+So wurde bei der Temperaturmessung auf die Konstantstromquelle Verzichtet, jedoch können zukünftige Anwender die tolle Auflösung mit allen Problemen und Hürden selbst erfahren. 
 
 ### Vorgaben
 -	Es soll nur eine Seite für Anschlüsse genutzt werden
@@ -38,7 +38,11 @@ So wurde bei der Temperaturmessung auf die Konstantstromquelle Verzichtet, jedoc
 ### Analog-Digital-Converter (ADC)
 Die Aufgabe eines ADC’s, ist die Umwandlung von analogen Signalen zu digitalen Daten. Dabei sind mehrere Faktoren wichtig, wie SampleRate und Auflösung (Bittiefe). Um die Signale zu ermitteln müssen wir wissen, was für eine Auflösung der ADC hat. Denn mit diesem, wissen wir wie fein wir das analoge Signal aufteilen können und so die digitalen Werte erhalten. Anhand der SampleRate sehen wir, wie viel Mal der ADC in der Sekunde das analoge Signal maximal abtasten kann. Mit diesen beiden Werten können wir dann in der Software die Werte in unser Signal umrechnen.
 ### Temperatursensorschaltungen
+
 Um einen Temperatursensor anzuschliessen gibt es verschiedene Möglichkeiten. Diese sind für thermisch abhängige Widerstände, welche als Temperatursensoren funktionieren. Zum Beispiel PT100 oder PT1000. 
+
+<img src="\Dokumentation\Bilder\zweidreivierleiter.png" alt="Schaltung Zweileiter, Dreileiter, Vierleiter" style="zoom: 50%;" />
+
 #### Zweileiter-Messung
 Der Messwiderstand (Temperatursensor) wird über dieselbe Leitung gespiesen wie auch die Temperatur gemessen wird. Daher, dass über die Leitungen ebenfalls etwas Spannung abfällt, wird dieser Fehler nicht mit einberechnet und wird zu einem Messfehler. 
 #### Dreileiter- Messung
@@ -47,13 +51,14 @@ Bei der Dreileitermessung wird der Messwiderstand über eine zusätzliche Leitun
 Bei einer Vierleitermessung werden der Messstrom und die Messspannung je auf einer separaten Leitung geführt. So kann der Widerstand komplett ohne Spannungsabfall auf der Messleitung gemessen werden.
 
 
-\todo bild
+
 ## Evaluation
 ###	ADC
 Beim Evaluieren eines ADC’s gibt es sehr viele Möglichkeiten. Die wichtigsten Eigenschaften sind Auflösung (Bittiefe) und Geschwindigkeit (Samples per Second). 
 Für dieses Projekt spielt die Geschwindigkeit keine grosse Rolle, da Prozesswerte abgefragt werden möchten und es sich nicht um eine Digitalisierung eines hochfrequenten Signals handelt. 
 Die Auflösung spielt für dieses Projekt die grössere Rolle. Da gezeigt werden möchte wie genau der ADC ist, soll die Temperatur des Temperatursensors ohne jegliche Verstärkung gemessen werden. 
 Die Berechnungen zu der Temperaturauflösung sind in Tabelle 1 zu finden. \todo
+
 ### Temperatursensor
 Als Temperatursensor eignet sich ein thermisch abhängiger Widerstand sehr gut. Diese werden oft auch in Industrieanlagen verwendet. Da gerade ein fertiger PT100 Sensor an Lager ist wird dieser Verwendet, er benötigt nur eine Buchse auf der Platine um den Sensor anzuhängen. 
 ###	Weitere Anschlüsse
@@ -97,7 +102,7 @@ In der nachfolgenden Tabelle sind die Leiterplattenänderungen festgehalten:
 Vorzunehmende Konfigurationen in STM32CubeMX, um die SPI-Schnittstelle zu verwenden: 
 Beim Starten das STM32F0-Discovery Board auswählen, so werden die Taster und LEDs richtig initialisiert
 -   Pinout & Konfiguration:
-    - Pinkonfiguration
+    - Pin-Konfiguration
         - PF5: 	ADC_CS
         - PC4: 	ADC_START
         - PC5: 	ADC_RESET
@@ -121,10 +126,10 @@ HAL_GPIO_WritePin(ADC_CS_GPIO_Port, ADC_CS_Pin,X)
 // X=0 --> Ausgang wird auf 0 gesetzt
 ```
 
-### SPI-Analyse mit Logicanalyzer
+### [SPI-Analyse mit Logicanalyzer](Dokumentation/picoscope.md)
 Erweiterungen siehe Anhang
 In vielen Fällen kann es hilfreich sein, wenn man mit einem Busprotokoll arbeitet, dieses auch zu messen. Es stand uns dazu ein PicoScope6 zur Verfügung. Sie können bis zu 16 Digitalanalysen und 2 Analoganalysen machen. Es ist ein Oszilloskop ohne Bildschirm. In der Software (Für Windows, MacOS und Linux) kann man das PicoScope steuern. Folgend unsere Erfahrungen. 
-Im Anhang befindet sich eine Anleitung wie man eine Analyse der SPI Daten machen kann. (Ebenfalls zu finden unter: https://github.com/philippgurtner/STM32AnalogExtension > Dokumentation.)
+Im Anhang befindet sich eine Anleitung wie man eine Analyse der SPI Daten machen kann.
 
 ## Softwarefunktionen
 Einen kurzen Einblick in die Funktionen welche eingesetzt werden. Weitere Details können dem Code entnommen werden. 
@@ -166,13 +171,54 @@ Als zusätzliche Anschlüsse wurden BNC Buchsen ausgewählt. Durch ihre Stndrdis
 
 # Schaltungsaufbau
 ## ADC-Serial Interface
-Der ADC besitzt ein Serial Peripherie Interface (SPI). Über diess kann mit dem Microntroller Komunizieren. 
+Der ADC besitzt ein Serial Peripherie Interface (SPI). Über dies kann mit dem Microntroller Komunizieren. 
 Damit die Peripherie nicht per Bit-Banging angesteuert werden muss, müssen sie beim Microcontroller mit bei einem SPI fähigen Port verbunden werden.
 # Dimensionierung
-Als Temperatursensor wird ein TP100 verwendet. Nach spezifikation hat der Temperatursensor bei 0°C 100R Widerstand. Je nach Temperaturänderung verändert sich der Widerstand nach einer Spezifizierten Kurve. 
+Als Temperatursensor wird ein TP100 verwendet. Nach Spezifikation hat der Temperatursensor bei 0°C 100R Widerstand. Je nach Temperaturänderung verändert sich der Widerstand nach einer Spezifizierten Kurve. 
 Als Messstrom wird bei 0°C 0.5mA verwendet. Da sich der Temperatursensor selbst erwärmt darf dieser Messstrom nicht zu hoch gewählt werden. 
 
 Um den Geflossenen Strom durch den ADC zu messen wird über einem Refererenzwiderstand die Spannung gemessen welche vom Messstrom erzeugt wird. 
+
+
+
+# Variablen Viewer installieren (debuggen)
+
+Das STMStudio ermöglicht es eine *debug Datei zu Importieren und diese Laufen zu lassen. So können mehrere globale Variablen angesehen werden. So kann eine Langzeitanalyse des Verhalten gemacht werden. 
+
+- STM-STUDIO-STM32 (von https://www.st.com/en/development-tools/stm-studio-stm32.html ) installieren (benötigt Java https://www.java.com/de/download/win10.jsp)
+
+- STM Studio öffnen
+
+- "File" > "Import variables from executable" öffnen
+  - "Executable file" .elf Datei suchen (im STM Projekt unter "Debugger")
+  - (Warnung Ignorieren)
+  - Variable zum Monitoren auswählen 
+  - "Import" , "Close"
+
+- Variable (Display Variables) in Viewer hineinziehen (Drag and Drop)
+
+- Start Knopf drücken (Debugger aus IDE darf nicht gleichzeitig aktiv sein)
+
+- Im Viewer: Rechtsklick, "Autorange" > "Both Axis"
+
+- Eventuell als Balken darstellen, maximum wert beachten (über hex ganz einfach manuell einstellbar)
+
+
+
+
+![Import variables](Dokumentation/Bilder/Importvariablesfromexecutable.PNG)
+
+![Variablenviewer als Balkenanzeige](/Dokumentation/Bilder/Balkendiagramm.PNG)
+
+
+
+
+
+
+
+
+
+
 
 
 # Sorry, die vollständige Dokumentation ist Leider nicht Opensource (und vorallem .docx), jedoch wird das Projekt bei Gelegenheit hier noch zu ende Dokumentiert (natürlich in MD :) , Danke für die Geduld)
